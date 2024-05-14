@@ -39,18 +39,26 @@ import {
   updateOrder as onUpdateOrder,
   deleteOrder as onDeleteOrder,
 } from "slices/thunk";
+import SingleSelect from './SingleSelect'; // Ajusta la ruta según la ubicación real de tu componente
 
 const ProjectsCreate = () => {
+  const [loading, setLoading] = useState(true)
 
-  //meta title
   document.title = "Create New Project | Skote - React Admin & Dashboard Template";
 
-
+  const [datos, setDatos] = useState<any>([]);
+  const [activeTab1, setactiveTab1] = useState("5");
   const [selectedFiles, setSelectedFiles] = useState<any>([]);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [imgStore, setImgStore] = useState<any>([]);
-  const [dropList, setDropList] = useState<any>(false);
-  const [active, setActive] = useState<number | string>(0)
+
+  const obtenerDatos = async () => {
+    let formatedData : any[] = JSON.parse('[{"id":1,"answer":"Neeeal Matthews","correct":false},{"id":2,"answer":"Jamal Burnett","correct":true},{"id":3,"answer":"Barry Dick","correct":false}]')
+    setDatos(formatedData);
+  };
+
+  useEffect(() => {
+    obtenerDatos();
+  }, []);
 
   const handleAcceptedFiles = (files: any) => {
     const newImages = files?.map((file: any) => {
@@ -61,245 +69,19 @@ const ProjectsCreate = () => {
     setSelectedFiles([...selectedFiles, ...newImages]);
   };
 
-  //  img upload
-  const handleImageChange = (event: any) => {
-    event.preventDefault();
-    let reader = new FileReader();
-    let file = event.target.files[0];
-    reader.onloadend = () => {
-      setSelectedImage(reader.result as string);
-      validation.setFieldValue('projectImage', reader.result)
-    };
-    reader.readAsDataURL(file);
-  };
-
-  const [activeTab1, setactiveTab1] = useState("5");
-
   const toggle1 = (tab: any) => {
     if (activeTab1 !== tab) {
       setactiveTab1(tab);
     }
   };
 
+  const ddad = (newData) => {
+    setDatos(null)
+    let n = JSON.parse(JSON.stringify(newData))
+    setDatos(n)
+  };  
 
-
-
-
-
-
-
-
-
-
-
-  const dispatch = useDispatch<any>();
-  const selectProperties = createSelector(
-    (state: EcoAction) => state.ecommerce,
-    (ecommerce) => ({
-      answers: ecommerce.orders,
-      loading: ecommerce.loading
-    })
-  );
-  const { answers, loading } = useSelector(selectProperties);
-  const [isLoading, setLoading] = useState(loading)
-
-  const [modal, setModal] = useState<boolean>(false);
-  const [modal1, setModal1] = useState<boolean>(false);
-  const [isEdit, setIsEdit] = useState<boolean>(false);
-  const [order, setOrder] = useState<any>(null);
-
-  // validation
-  const validation: any = useFormik({
-    // enableReinitialize : use this flag when initial values needs to be changed
-    enableReinitialize: true,
-
-    initialValues: {
-      orderId: (order && order.orderId) || '',
-      billingName: (order && order.billingName) || '',
-      orderDate: (order && order.orderDate) || '',
-      total: (order && order.total) || '',
-      paymentStatus: (order && order.paymentStatus) || '',
-      badgeClass: (order && order.badgeClass) || 'success',
-      paymentMethod: (order && order.paymentMethod) || '',
-    },
-    validationSchema: Yup.object({
-      orderId: Yup.string().required("Please Enter Your Order Id"),
-      billingName: Yup.string().required("Please Enter Your Billing Name"),
-      orderDate: Yup.string().required("Please Enter Your Order Date"),
-      total: Yup.string().required("Total Amount"),
-      paymentStatus: Yup.string().required("Please Enter Your Payment Status"),
-      badgeClass: Yup.string().required("Please Enter Your Badge Class"),
-      paymentMethod: Yup.string().required("Please Enter Your Payment Method"),
-    }),
-    onSubmit: (values: any) => {
-      if (isEdit) {
-        const updateOrder = {
-          id: order ? order.id : 0,
-          orderId: values.orderId,
-          billingName: values.billingName,
-          orderDate: values.orderDate,
-          total: values.total,
-          paymentStatus: values.paymentStatus,
-          paymentMethod: values.paymentMethod,
-          badgeClass: values.badgeClass,
-        };
-        // update order
-        dispatch(onUpdateOrder(updateOrder));
-        validation.resetForm();
-      } else {
-        const newOrder = {
-          id: Math.floor(Math.random() * (30 - 20)) + 20,
-          orderId: values["orderId"],
-          billingName: values["billingName"],
-          orderDate: values["orderDate"],
-          total: values["total"],
-          paymentStatus: values["paymentStatus"],
-          paymentMethod: values["paymentMethod"],
-          badgeClass: values["badgeClass"],
-        };
-        // save new order
-        dispatch(onAddNewOrder(newOrder));
-        validation.resetForm();
-      }
-      toggle();
-    },
-  });
-
-  const [editDetails, setEditDetails] = useState<any>('');
-
-  const toggleViewModal = useCallback((data: any) => { setModal1(!modal1); setEditDetails(data) }, [modal1]);
-
-  useEffect(() => {
-    if (answers && !answers.length) {
-      dispatch(onGetOrders());
-    }
-  }, [dispatch, answers]);
-
-  const toggle = useCallback(() => {
-    if (modal) {
-      setModal(false);
-      setOrder(null);
-    } else {
-      setModal(true);
-    }
-  }, [modal]);
-
-  const handleOrderClick = useCallback((arg: any) => {
-    const order = arg;
-    setOrder({
-      id: order.id,
-      answer: order.answer,
-      correct: order.correct
-    });
-    setIsEdit(true);
-
-    toggle();
-  }, [toggle]);
-
-  //delete order
-  const [deleteModal, setDeleteModal] = useState<boolean>(false);
-
-  const onClickDelete = (order: any) => {
-    setOrder(order);
-    setDeleteModal(true);
-  };
-
-  const handleDeleteOrder = () => {
-    if (order.id) {
-      dispatch(onDeleteOrder(order.id));
-      setDeleteModal(false);
-    }
-  };
-  const handleOrderClicks = () => {
-    console.log("sadsadsad")
-    setIsEdit(false);
-    setOrder("")
-    toggle();
-  };
-
-
-
-  // validation
-  const validation1: any = useFormik({
-    initialValues: {
-      projectname: '',
-      projectdesc: '',
-      assignedto: [],
-      projectImage: '',
-      img: '',
-      startdate: '',
-      // enddate: ''
-    },
-    validationSchema: Yup.object({
-      projectname: Yup.string().required("Start typing your question"),
-      projectdesc: Yup.string().required("Please Enter Your Project Desc"),
-      assignedto: Yup.array().min(1, "Please Select"),
-      startdate: Yup.string().required("Please Enter Your Start Date"),
-      projectImage: Yup.string().required("Please Select Image"),
-    }),
-    onSubmit: (values: any) => {
-      // console.log(values);
-
-    }
-  });
-
-
-  const columns = useMemo(
-    () => [
-      {
-        header: 'Answer',
-        accessorKey: 'answer',
-        enableColumnFilter: false,
-        enableSorting: true,
-      },
-      {
-        header: 'Correct',
-        accessorKey: 'correct',
-        enableColumnFilter: false,
-        enableSorting: true,
-        cell: (cellProps: any) => {
-          return <input
-            type="radio"
-            id="customRadio2"
-            name="customRadio"
-            className="form-check-input"
-            defaultChecked={cellProps.row.original.correct}
-          />;
-        }
-      },
-      {
-        header: 'Payment Method',
-        accessorKey: 'correct',
-        enableColumnFilter: false,
-        enableSorting: true,
-      },
-      {
-        header: 'Action',
-        accessorKey: 'action',
-        enableColumnFilter: false,
-        enableSorting: true,
-        cell: (cellProps: any) => {
-          return (
-            <div className="d-flex gap-3">
-              <Link to="#" className="text-success" onClick={() => { const orderData = cellProps.row.original; handleOrderClick(orderData); }}>
-                <i className="mdi mdi-pencil font-size-18" id="editTooltip" />
-                <UncontrolledTooltip placement="top" target="editTooltip">
-                  Edit
-                </UncontrolledTooltip>
-              </Link>
-              <Link to="#" className="text-danger" onClick={() => { const orderData = cellProps.row.original; onClickDelete(orderData); }}>
-                <i className="mdi mdi-delete font-size-18" id="deleteTooltip" />
-                <UncontrolledTooltip placement="top" target="deleteTooltip">
-                  Delete
-                </UncontrolledTooltip>
-              </Link>
-            </div>
-          );
-        }
-      },
-    ],
-    [handleOrderClick, toggleViewModal]
-  );
+  
 
   return (
     <React.Fragment>
@@ -309,12 +91,11 @@ const ProjectsCreate = () => {
           <Breadcrumbs title="Projects" breadcrumbItem="Create New" />
           <Form id="createproject-form" onSubmit={(e: any) => {
             e.preventDefault();
-            validation1.handleSubmit();
             return false;
           }}>
 
             {
-              isLoading ? <Spinners setLoading={setLoading} />
+              loading ? <Spinners setLoading={setLoading} />
                 :
                 <Row>
                   <Col lg={8}>
@@ -329,22 +110,14 @@ const ProjectsCreate = () => {
                             name="projectname"
                             type="text"
                             placeholder="Enter your question"
-                            onChange={validation1.handleChange}
-                            onBlur={validation1.handleBlur}
-                            value={validation1.values.projectname || ""}
+
                           />
-                          {validation1.touched.projectname && validation1.errors.projectname ? (
-                            <FormFeedback type="invalid" className="d-block">{validation1.errors.projectname}</FormFeedback>
-                          ) : null}
-
                         </div>
-
                         <div>
                           <Label>Insert Media (optional)</Label>
                           <Dropzone
                             onDrop={(acceptedFiles: any) => {
                               handleAcceptedFiles(acceptedFiles);
-                              validation1.setFieldValue("img", acceptedFiles[0])
                             }}
                           >
                             {({ getRootProps, getInputProps }) => (
@@ -396,150 +169,9 @@ const ProjectsCreate = () => {
                               );
                             })}
                           </div>
-
-                          {validation1.errors.img && validation1.touched.img ? (
-                            <FormFeedback type="invalid" className="d-block">{validation1.errors.img}</FormFeedback>
-                          ) : null}
                         </div>
 
-                        <EcommerceOrdersModal isOpen={modal1} toggle={toggleViewModal} editDetails={editDetails} />
-                        <DeleteModal
-                          show={deleteModal}
-                          onDeleteClick={handleDeleteOrder}
-                          onCloseClick={() => setDeleteModal(false)}
-                        />
-
-                        <TableContainer
-                          columns={columns}
-                          data={answers || []}
-                          isAddButton={true}
-                          handleUserClick={handleOrderClicks}
-                          buttonClass="btn btn-success btn-rounded waves-effect waves-light mb-2 me-2 addOrder-modal"
-                          buttonName=" Add Answer"
-                          tableClass="align-middle table-nowrap dt-responsive nowrap w-100 table-check dataTable no-footer dtr-inline"
-                          theadClass="table-light"
-                        />
-
-                        <Modal isOpen={modal} toggle={toggle}>
-                          <ModalHeader toggle={toggle} tag="h4">
-                            {!!isEdit ? "Edit Order" : "Add Order"}
-                          </ModalHeader>
-                          <ModalBody>
-                            <Form onSubmit={(e) => { e.preventDefault(); validation.handleSubmit(); return false; }}>
-                              <Row>
-                                <Col xs={12}>
-                                  <div className="mb-3">
-                                    <Label>Order Id</Label>
-                                    <Input
-                                      name="orderId"
-                                      type="text"
-                                      onChange={validation.handleChange}
-                                      onBlur={validation.handleBlur}
-                                      value={validation.values.orderId || ""}
-                                      invalid={
-                                        validation.touched.orderId && validation.errors.orderId ? true : false
-                                      }
-                                    />
-                                    {validation.touched.orderId && validation.errors.orderId ? (
-                                      <FormFeedback type="invalid">{validation.errors.orderId}</FormFeedback>
-                                    ) : null}
-                                  </div>
-                                  <div className="mb-3">
-                                    <Label>Billing Name</Label>
-                                    <Input
-                                      name="billingName"
-                                      type="text"
-                                      validate={{
-                                        required: { value: true },
-                                      }}
-                                      onChange={validation.handleChange}
-                                      onBlur={validation.handleBlur}
-                                      value={validation.values.billingName || ""}
-                                      invalid={
-                                        validation.touched.billingName && validation.errors.billingName ? true : false
-                                      }
-                                    />
-                                    {validation.touched.billingName && validation.errors.billingName ? (
-                                      <FormFeedback type="invalid">{validation.errors.billingName}</FormFeedback>
-                                    ) : null}
-                                  </div>
-                                  <div className="mb-3">
-                                    <Label>Order Date</Label>
-                                    <Flatpickr
-                                      className="form-control d-block"
-                                      id="orderDate"
-                                      name="orderDate"
-                                      placeholder="Select date"
-                                      options={{
-                                        mode: "single",
-                                        dateFormat: 'd M, Y',
-                                      }}
-                                      onChange={(kycBirthDate: any) => validation.setFieldValue("orderDate", moment(kycBirthDate[0]).format("DD MMMM ,YYYY"))}
-                                      value={validation.values.orderDate || ''}
-                                    />
-                                    {validation.touched.orderDate && validation.errors.orderDate ? (
-                                      <span className="text-danger">{validation.errors.orderDate}</span>
-                                    ) : null}
-                                  </div>
-                                  <div className="mb-3">
-                                    <Label>Total</Label>
-                                    <Input
-                                      name="total"
-                                      type="number"
-                                      onChange={validation.handleChange}
-                                      onBlur={validation.handleBlur}
-                                      value={validation.values.total || ""}
-                                      invalid={
-                                        validation.touched.total && validation.errors.total ? true : false
-                                      }
-                                    />
-                                    {validation.touched.total && validation.errors.total ? (
-                                      <FormFeedback type="invalid">{validation.errors.total}</FormFeedback>
-                                    ) : null}
-                                  </div>
-
-                                  <div className="mb-3">
-                                    <Label>Payment Method</Label>
-                                    <Input
-                                      name="paymentMethod"
-                                      type="select"
-                                      className="form-select"
-                                      onChange={validation.handleChange}
-                                      onBlur={validation.handleBlur}
-                                      value={
-                                        validation.values.paymentMethod || ""
-                                      }
-                                    >
-                                      <option>Mastercard</option>
-                                      <option>Visa</option>
-                                      <option>Paypal</option>
-                                      <option>COD</option>
-                                    </Input>
-                                    {validation.touched.paymentMethod && validation.errors.paymentMethod ? (
-                                      <FormFeedback type="invalid" className="d-block">{validation.errors.paymentMethod}</FormFeedback>
-                                    ) : null}
-                                  </div>
-                                </Col>
-                              </Row>
-                              <Row>
-                                <Col>
-                                  <div className="text-end">
-                                    <Button type="submit" color="success" className="save-user">
-                                      {!!isEdit ? "Update" : "Add"}
-                                    </Button>
-                                  </div>
-                                </Col>
-                              </Row>
-                            </Form>
-                          </ModalBody>
-                        </Modal>
-
-
-
-
-
-                        <ToastContainer />
-
+                        <SingleSelect answers={datos} updateDatos={ddad}/>
 
                       </CardBody>
                     </Card>
