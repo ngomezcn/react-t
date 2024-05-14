@@ -14,7 +14,7 @@ import TableContainer from '../../Components/Common/TableContainer';
 import DeleteModal from '../../Components/Common/DeleteModal';
 import EcommerceOrdersModal from "./EcommerceOrdersModal";
 
-const ProjectComponent = ({ answers, updateDatos }) => {
+const ProjectComponent = ({ answers, updateDatos, isSingleSelect }) => {
 
     const dispatch = useDispatch<any>();
     const [modal, setModal] = useState<boolean>(false);
@@ -93,16 +93,9 @@ const ProjectComponent = ({ answers, updateDatos }) => {
     }, [toggle]);
 
     const onClickDelete = (order: any) => {
-        setOrder(order);
-        setDeleteModal(true);
+        deleteAnswer(order.id)
     };
 
-    const handleDeleteOrder = () => {
-        if (order.id) {
-            deleteAnswer(order.id)
-            setDeleteModal(false);
-        }
-    };
     const handleOrderClicks = () => {
         setIsEdit(false);
         setOrder("")
@@ -138,13 +131,23 @@ const ProjectComponent = ({ answers, updateDatos }) => {
         updateDatos(newList)
     }
 
-    const selectCorrect = (id) => {
+    const singleSelect = (id) => {
         answers.forEach(function (number) {
             if (number.id != id) {
                 number.correct = false
             } else {
                 number.correct = true
             }
+        });
+
+        updateDatos(answers)
+    };
+
+    const multiSelect = (id) => {
+        answers.forEach(function (number) {
+            if (number.id == id) {
+                number.correct = true
+            } 
         });
 
         updateDatos(answers)
@@ -162,36 +165,49 @@ const ProjectComponent = ({ answers, updateDatos }) => {
                 accessorKey: 'correct',
                 enableColumnFilter: false,
                 cell: (cellProps: any) => {
-                    const handleClick = () => {
-
-                        selectCorrect(cellProps.row.original.id)
+                    const handleClickIsSingleSelect = () => {
+                        singleSelect(cellProps.row.original.id)
+                        validation.resetForm();
+                    };
+                    const handleClickIsMultiSelect = () => {
+                        multiSelect(cellProps.row.original.id)
                         validation.resetForm();
                     };
 
-                    return <input
-                        type="radio"
-                        id="customRadio2"
-                        name="customRadio"
-                        className="form-check-input"
-                        defaultChecked={cellProps.row.original.correct}
-                        onClick={handleClick}
-                    />;
+                    return isSingleSelect ? ( // Comprueba si isRadio es verdadero
+                        <input
+                            type="radio"
+                            id="customRadio2"
+                            name="customRadio"
+                            className="form-check-input"
+                            defaultChecked={cellProps.row.original.correct}
+                            onClick={handleClickIsSingleSelect}
+                        />
+                    ) : (
+                        <input
+                            type="checkbox"
+                            className="form-check-input"
+                            id="customCheckcolor1"
+                            checked={cellProps.row.original.correct}
+                            onChange={handleClickIsMultiSelect}
+                        />
+                    );
                 }
             },
-            {
+            /*{
                 header: 'Correct {debug}',
                 accessorKey: 'correct',
                 enableColumnFilter: false,
-            },
+            },*/
             {
-                header: 'Action',
+                header: '',
                 accessorKey: 'action',
                 enableColumnFilter: false,
                 cell: (cellProps: any) => {
                     return (
-                        <div className="d-flex gap-3">
+                        <div className="d-flex justify-content-end gap-3s">
                             <Link to="#" className="text-success" onClick={() => { const orderData = cellProps.row.original; handleOrderClick(orderData); }}>
-                                <i className="mdi mdi-pencil font-size-18" id="editTooltip" />
+                                <i className="mdi mdi-pencil font-size-18 me-2" id="editTooltip" />
                                 <UncontrolledTooltip placement="top" target="editTooltip">
                                     Edit
                                 </UncontrolledTooltip>
@@ -207,18 +223,13 @@ const ProjectComponent = ({ answers, updateDatos }) => {
                 }
             },
         ],
-        [handleOrderClick, toggleViewModal, answers]
+        [handleOrderClick, toggleViewModal, answers, isSingleSelect]
     );
 
     return (
         <React.Fragment>
 
             <EcommerceOrdersModal isOpen={modal1} toggle={toggleViewModal} editDetails={editDetails} />
-            <DeleteModal
-                show={deleteModal}
-                onDeleteClick={handleDeleteOrder}
-                onCloseClick={() => setDeleteModal(false)}
-            />
 
             <TableContainer
                 columns={columns}
@@ -232,9 +243,7 @@ const ProjectComponent = ({ answers, updateDatos }) => {
             />
 
             <Modal isOpen={modal} toggle={toggle}>
-                <ModalHeader toggle={toggle} tag="h4">
-                    {!!isEdit ? "Edit Order" : "Add Order"}
-                </ModalHeader>
+                
                 <ModalBody>
                     <Form onSubmit={(e) => { e.preventDefault(); validation.handleSubmit(); return false; }}>
                         <Row>

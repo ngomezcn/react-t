@@ -50,9 +50,10 @@ const ProjectsCreate = () => {
   const [activeTab1, setactiveTab1] = useState("5");
   const [selectedFiles, setSelectedFiles] = useState<any>([]);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isSingleSelect, setIsSingleSelect] = useState(true);
 
   const obtenerDatos = async () => {
-    let formatedData : any[] = JSON.parse('[{"id":1,"answer":"Neeeal Matthews","correct":false},{"id":2,"answer":"Jamal Burnett","correct":true},{"id":3,"answer":"Barry Dick","correct":false}]')
+    let formatedData: any[] = JSON.parse('[{"id":1,"answer":"Neeeal Matthews","correct":false},{"id":2,"answer":"Jamal Burnett","correct":true},{"id":3,"answer":"Barry Dick","correct":false}]')
     setDatos(formatedData);
   };
 
@@ -79,9 +80,23 @@ const ProjectsCreate = () => {
     setDatos(null)
     let n = JSON.parse(JSON.stringify(newData))
     setDatos(n)
-  };  
+  };
 
-  
+  const handleQuestionTypeChange = (event) => {
+    const selectedType = event.target.value;
+    // Dependiendo del tipo seleccionado, actualiza el estado isRadio
+    if (selectedType === '0') {
+      setIsSingleSelect(true);
+
+      datos.forEach(function (answer) {
+        answer.correct = false
+      });
+
+
+    } else {
+      setIsSingleSelect(false); // Multi-select o Sort
+    }
+  };
 
   return (
     <React.Fragment>
@@ -171,7 +186,7 @@ const ProjectsCreate = () => {
                           </div>
                         </div>
 
-                        <SingleSelect answers={datos} updateDatos={ddad}/>
+                        <SingleSelect answers={datos} updateDatos={ddad} isSingleSelect={isSingleSelect} />
 
                       </CardBody>
                     </Card>
@@ -182,10 +197,10 @@ const ProjectsCreate = () => {
                         <h5 className="card-title mb-3">Settings</h5>
                         <div className="mb-3">
                           <Label htmlFor="project-status-input">Question Type</Label>
-                          <select className="form-select pageSize" id="project-status-input">
-                            <option value="Completed">Single Select</option>
-                            <option value="Inprogress">Multi-select</option>
-                            <option value="Delay">Sort</option>
+                          <select className="form-select pageSize" id="project-status-input" onChange={handleQuestionTypeChange}>
+                            <option value="0">Single Select</option>
+                            <option value="1">Multi-select</option>
+                            <option value="2">Sort</option>
                           </select>
                           <div className="invalid-feedback">Please select project status.</div>
                         </div>
