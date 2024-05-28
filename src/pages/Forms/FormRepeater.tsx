@@ -19,7 +19,7 @@ import Breadcrumbs from "../../Components/Common/Breadcrumb";
 const FormRepeater = () => {
 
   //meta title
-  document.title = "Form Repeater | Skote - React Admin & Dashboard Template";
+  document.title = "Form Repeater | Mercantec - Quiz Project";
 
   const [rows1, setrows1] = useState([{ id: 1, phone: "" }]);
 

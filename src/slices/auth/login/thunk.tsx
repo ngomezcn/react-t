@@ -1,35 +1,66 @@
 import { getFirebaseBackend } from "helpers/firebase_helper";
-import { postJwtValidation, postEmailVerification, postFakeLogin, postJwtLogin } from "helpers/fakebackend_helper";
+import { postJwtValidation, postEmailVerification, postLogin, postJwtLogin, postRegister } from "helpers/fakebackend_helper";
 import { loginSuccess, apiError, logoutUserSuccess, resetLoginFlag } from "./reducer";
 import Cookies from 'universal-cookie';
+import { ApiError, ApiResponse, isApiError } from "helpers/api_interfaces";
 
 export const loginuser = (user: any, history: any) => async (dispatch: any) => {
     try {
-        let response: any;
-
-        response = await postFakeLogin({
+        let response: ApiResponse = await postLogin({
             email: user.email,
             password: user.password
         })
-        
-        //localStorage.setItem("authUser", JSON.stringify(response));
+
         dispatch(loginSuccess(response));
         history('/dashboard');
-    } catch (error) {
-        dispatch(apiError(error));
+    } catch (ex) {
+
+        if (isApiError(ex)) {
+            let error = ex as ApiError
+
+            if (error.status == 403) { 
+                history('/email-verification?email=' + user.email);
+                return
+            }
+            if (error.status == 401) { 
+                dispatch(apiError("Invalid credentials"));
+                return
+            }
+            if (error.status == 404) { 
+                dispatch(apiError("User not registered"));
+                return
+            }
+        } 
+        dispatch(apiError(JSON.stringify(ex)));
     }
 }
 
 export const emailVerification = (data: any, history: any) => async (dispatch: any) => {
     try {
-        let response: any;
 
-        response = await postEmailVerification(data)
+        let response: ApiResponse = await postEmailVerification({
+            code: data.code,
+            email: data.email
+        })
 
-        dispatch(loginSuccess(response));
+        dispatch(loginSuccess(response.data));
         history('/dashboard');
-    } catch (error) {
-        dispatch(apiError(error));
+    } catch (ex) {
+        
+        if (isApiError(ex)) {
+            let error = ex as ApiError
+
+            if (error.status == 404) { 
+                dispatch(apiError("Invalid Code"));
+                return
+            }
+
+            if (error.status == 409) { 
+                dispatch(apiError("The user is already registered and verified."));
+                return
+            }
+        } 
+        dispatch(apiError(JSON.stringify(ex)));
     }
 }
 
@@ -50,18 +81,8 @@ export const jwtValidation = async (data: any): Promise<boolean> => {
 
 export const logoutUser = () => async (dispatch: any) => {
     try {
-        
+
         dispatch(logoutUserSuccess(true));
-
-        /*localStorage.removeItem("authUser");
-
-        const fireBaseBackend = getFirebaseBackend();
-        if (process.env.REACT_APP_DEFAULTAUTH === "firebase") {
-            const response = fireBaseBackend.logout;
-            dispatch(logoutUserSuccess(response));
-        } else {
-            dispatch(logoutUserSuccess(true));
-        }*/
 
     } catch (error) {
         dispatch(apiError(error));
@@ -74,27 +95,5 @@ export const resetLoginMsgFlag = () => {
         return response;
     } catch (error) {
         return error;
-    }
-};
-
-
-export const socialLogin = (type: any, history: any) => async (dispatch: any) => {
-    try {
-        let response: any;
-
-        if (process.env.REACT_APP_DEFAULTAUTH === "firebase") {
-            const fireBaseBackend = getFirebaseBackend();
-            response = fireBaseBackend.socialLoginUser(type);
-        }
-
-        const socialdata = await response;
-        if (socialdata) {
-            sessionStorage.setItem("authUser", JSON.stringify(socialdata));
-            dispatch(loginSuccess(socialdata));
-            history('/dashboard');
-        }
-
-    } catch (error) {
-        dispatch(apiError(error));
     }
 };

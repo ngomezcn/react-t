@@ -1,4 +1,6 @@
 import axios from "axios";
+import Cookies from 'universal-cookie';
+import { ApiError, ApiResponse, isApiError } from "helpers/api_interfaces";
 
 // default
 axios.defaults.baseURL = "";
@@ -8,10 +10,45 @@ axios.defaults.headers.post["Content-Type"] = "application/json";
 // content type
 // let authUser: any = (localStorage.getItem("authUser"));
 
-// intercepting to capture errors
 axios.interceptors.response.use(
   function (response: any) {
     return response.data ? response.data : response;
+  },
+  /*function (response): ApiResponse {
+    // Retornar los datos junto con el estado
+    return { data: response.data, status: response.status };
+  },*/
+  function (error): Promise<ApiError> {
+    // Manejar los errores y construir un objeto ApiError
+    let message: string;
+
+    switch (error.response?.status) {
+      case 500:
+        message = "Internal Server Error";
+        break;
+      //case 401:
+       // message = "Invalid credentials";
+       // break;
+      //case 404:
+      //  message = "Sorry! The data you are looking for could not be found";
+      //  break;
+      default:
+        message = error.response?.data?.message || error.message || "Unknown error";
+    }
+
+    const apiError: ApiError = {
+      message,
+      status: error.response?.status || 0,
+    };
+
+    return Promise.reject(apiError);
+  }
+);
+/*// intercepting to capture errors
+axios.interceptors.response.use(
+  function (response: any) {
+    //return response.data ? response.data : response;
+    return { ...response.data, status: response.status };
   },
   function (error: any) {
     // Any status codes that falls outside the range of 2xx cause this function to trigger
@@ -27,17 +64,27 @@ axios.interceptors.response.use(
         message = "Sorry! the data you are looking for could not be found";
         break;
       default:
-        message = error.message || error;
+        message = error.response.data.message || error.message || error;
     }
-    return Promise.reject(message);
+    return Promise.reject({ message, status: error.response.status });
+    //default:
+    //  message = error.message || error;
+    //}
+    //return Promise.reject(message );
   }
-);
+);*/
+
 /**
  * Sets the default authorization
  * @param {*} token
  */
-const setAuthorization = (token: any) => {
+/*const setAuthorization = (token: any) => {
   axios.defaults.headers.common["Authorization"] = "Bearer " + token;
+};
+*/
+const setAuthorization = () => {
+  const cookies = new Cookies(null, { path: '/' });
+  axios.defaults.headers.common["Authorization"] = "Bearer " + cookies.get("authToken");
 };
 
 class APIClient {

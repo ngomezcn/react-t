@@ -8,15 +8,20 @@ import {
   DropdownMenu,
   DropdownItem,
   ButtonDropdown,
+  Toast,
+  ToastHeader,
+  ToastBody,
+  UncontrolledAlert
 } from "reactstrap";
 
 //Import Breadcrumb
 import Breadcrumbs from "../../Components/Common/Breadcrumb";
 
 const UiButtons = () => {
+  const [toast4, setToast4] = useState(true);
 
   //meta title
-  document.title = "Buttons | Skote - React Admin & Dashboard Template";
+  document.title = "Buttons | Mercantec - Quiz Project";
 
   const [drp_link, setdrp_link] = useState(false);
 
@@ -382,6 +387,7 @@ const UiButtons = () => {
                         <h5 className="font-size-15 mb-3">Example 2</h5>
 
                         <div className="d-flex flex-wrap gap-2">
+
                           <button
                             type="button"
                             className="btn btn-primary  btn-label"

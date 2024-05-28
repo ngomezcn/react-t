@@ -49,7 +49,7 @@ const PagesTimeline: React.FC = () => {
   ];
 
   //meta title
-  document.title = "Timeline | Skote - React Admin & Dashboard Template";
+  document.title = "Timeline | Mercantec - Quiz Project";
 
   return (
     <React.Fragment>

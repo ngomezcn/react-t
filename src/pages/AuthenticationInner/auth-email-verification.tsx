@@ -9,7 +9,7 @@ import logolight from "../../assets/images/logo-light.svg"
 const EmailVerification = () => {
 
   //meta title
-  document.title="Email Verification | Skote - React Admin & Dashboard Template";
+  document.title="Email Verification | Mercantec - Quiz Project";
 
   return (
     <React.Fragment>
@@ -78,7 +78,7 @@ const EmailVerification = () => {
                   </Link>{" "}
                 </p>
                 <p>
-                  © {new Date().getFullYear()} Skote. Crafted with{" "}
+                  © {new Date().getFullYear()} Mercantec. Crafted with{" "}
                   <i className="mdi mdi-heart text-danger"></i> by Themesbrand
                 </p>
               </div>

@@ -275,7 +275,7 @@ const DatatableTables = () => {
     ];
 
     //meta title
-    document.title = "Data Tables | Skote - React Admin & Dashboard Template";
+    document.title = "Data Tables | Mercantec - Quiz Project";
 
     return (
         <div className="page-content">

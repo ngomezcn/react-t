@@ -15,7 +15,7 @@ import TopVisitors from './TopVisitors';
 
 const DashboardBlog: React.FC = () => {
 
-  document.title = "Blog Dashboard | Skote - React Admin & Dashboard Template";
+  document.title = "Blog Dashboard | Mercantec - Quiz Project";
 
   return (
     <React.Fragment>

@@ -38,7 +38,7 @@ const EmailRead = (props: any) => {
   }, [dispatch, id]);
 
   //meta title
-  document.title = "Read Email | Skote - React Admin & Dashboard Template";
+  document.title = "Read Email | Mercantec - Quiz Project";
 
   return (
     <React.Fragment>

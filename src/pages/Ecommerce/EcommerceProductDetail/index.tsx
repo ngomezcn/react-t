@@ -25,7 +25,7 @@ import { EcoAction } from "../type";
 const EcommerceProductDetail = props => {
 
   //meta title
-  document.title = "Product Details | Skote - React Admin & Dashboard Template";
+  document.title = "Product Details | Mercantec - Quiz Project";
 
   const dispatch = useDispatch<any>();
 

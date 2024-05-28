@@ -17,7 +17,7 @@ import * as Yup from "yup";
 const TasksCreate = () => {
 
   //meta title
-  document.title = "Create Task | Skote - React Admin & Dashboard Template";
+  document.title = "Create Task | Mercantec - Quiz Project";
 
   const inpRow = [{ name: "", file: "" }]
   const [startDate, setStartDate] = useState(new Date())

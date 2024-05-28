@@ -10,12 +10,12 @@ import { Row, Col, CardBody, Card, Container, Form, Label, Input, FormFeedback }
 
 // import images
 import profileImg from "../../assets/images/profile-img.png";
-import logoImg from "../../assets/images/logo.svg";
+import logoImg from "../../assets/images/logo.png";
 
 const Register = () => {
 
   //meta title
-  document.title = "Register | Skote - React Admin & Dashboard Template";
+  document.title = "Register | Mercantec - Quiz Project";
 
   //form validation
   const validation: any = useFormik({
@@ -48,7 +48,7 @@ const Register = () => {
                     <Col className="col-7">
                       <div className="text-primary p-4">
                         <h5 className="text-primary">Free Register</h5>
-                        <p>Get your free Skote account now.</p>
+                        <p>Get your free Mercantec account now.</p>
                       </div>
                     </Col>
                     <Col className="col-5 align-self-end">
@@ -177,7 +177,7 @@ const Register = () => {
 
                       <div className="mt-4 text-center">
                         <p className="mb-0">
-                          By registering you agree to the Skote{" "}
+                          By registering you agree to the Mercantec{" "}
                           <Link to="#" className="text-primary">
                             Terms of Use
                           </Link>
@@ -199,7 +199,7 @@ const Register = () => {
                   </Link>{" "}
                 </p>
                 <p>
-                  © {new Date().getFullYear()} Skote. Crafted with{" "}
+                  © {new Date().getFullYear()} Mercantec. Crafted with{" "}
                   <i className="mdi mdi-heart text-danger" /> by Themesbrand
                 </p>
               </div>

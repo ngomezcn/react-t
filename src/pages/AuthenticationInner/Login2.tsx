@@ -15,7 +15,7 @@ const Login2 = () => {
   const [passwordShow, setPasswordShow] = useState<boolean>(false);
 
   //meta title
-  document.title = "Login 2 | Skote - React Admin & Dashboard Template";
+  document.title = "Login 2 | Mercantec - Quiz Project";
 
   // Form validation 
   const validation : any = useFormik({
@@ -65,7 +65,7 @@ const Login2 = () => {
                       <div>
                         <h5 className="text-primary">Welcome Back !</h5>
                         <p className="text-muted">
-                          Sign in to continue to Skote.
+                          Sign in to continue to Mercantec.
                         </p>
                       </div>
 
@@ -196,7 +196,7 @@ const Login2 = () => {
 
                     <div className="mt-4 mt-md-5 text-center">
                       <p className="mb-0">
-                        © {new Date().getFullYear()} Skote. Crafted with{" "}
+                        © {new Date().getFullYear()} Mercantec. Crafted with{" "}
                         <i className="mdi mdi-heart text-danger"></i> by
                         Themesbrand
                       </p>

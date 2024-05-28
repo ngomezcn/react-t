@@ -6,7 +6,7 @@ import Breadcrumbs from "../../Components/Common/Breadcrumb";
 
 const EmailTemplateBilling = () => {
    //meta title
-   document.title="Billing Email | Skote - React Admin & Dashboard Template";
+   document.title="Billing Email | Mercantec - Quiz Project";
   return (
     <React.Fragment>
       <div className="page-content">
@@ -582,7 +582,7 @@ const EmailTemplateBilling = () => {
                                         align="center"
                                         valign="top"
                                       >
-                                        Skote Inc. 2896 Howell Rd,
+                                        Mercantec Inc. 2896 Howell Rd,
                                         Russellville, AR, 72823
                                       </td>
                                     </tr>
@@ -610,7 +610,7 @@ const EmailTemplateBilling = () => {
                                         }}
                                         valign="top"
                                       >
-                                        © {new Date().getFullYear()} Skote
+                                        © {new Date().getFullYear()} Mercantec
                                       </td>
                                     </tr>
                                   </tbody>

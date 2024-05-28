@@ -19,7 +19,7 @@ import logoLight from "../../assets/images/logo-light.svg";
 const InvoiceDetail = (props: any) => {
 
   //meta title
-  document.title = "Invoice Detail | Skote - React Admin & Dashboard Template";
+  document.title = "Invoice Detail | Mercantec - Quiz Project";
 
   const dispatch = useDispatch<any>();
 

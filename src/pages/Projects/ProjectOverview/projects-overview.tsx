@@ -21,7 +21,7 @@ import { createSelector } from 'reselect';
 const ProjectsOverview = (props: any) => {
 
   //meta title
-  document.title = "Project Overview | Skote - React Admin & Dashboard Template";
+  document.title = "Project Overview | Mercantec - Quiz Project";
 
   const dispatch = useDispatch<any>();
 

@@ -40,25 +40,38 @@ import {
   deleteOrder as onDeleteOrder,
 } from "slices/thunk";
 import SingleSelect from './SingleSelect'; // Ajusta la ruta según la ubicación real de tu componente
+import Slidewithindicator from "./../Ui/CarouselTypes/slidewithindicator";
 
-const ProjectsCreate = () => {
+import img2 from "../../assets/images/small/img-2.jpg";
+
+import { timeLimits } from "slices/create-question/thunk";
+
+const CreateQuestion = () => {
   const [loading, setLoading] = useState(true)
 
-  document.title = "Create New Project | Skote - React Admin & Dashboard Template";
+  document.title = "Create Question | Mercantec - Quiz Project";
 
+  const [timeLimitsList, setTimeLimitsList] = useState<any>([]);
   const [datos, setDatos] = useState<any>([]);
   const [activeTab1, setactiveTab1] = useState("5");
   const [selectedFiles, setSelectedFiles] = useState<any>([]);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [isSingleSelect, setIsSingleSelect] = useState(true);
+  const [isSort, setIsSort] = useState(false);
 
   const obtenerDatos = async () => {
-    let formatedData: any[] = JSON.parse('[{"id":1,"answer":"Neeeal Matthews","correct":false},{"id":2,"answer":"Jamal Burnett","correct":true},{"id":3,"answer":"Barry Dick","correct":false}]')
+    let formatedData: any[] = JSON.parse('[{"id":1,"answer":"Enforcing routing policies","correct":true},{"id":2,"answer":"Marking interesting traffic for data policies","correct":false},{"id":3,"answer":"Applying security policies","correct":false}]')
+    //let formatedData: any[] = []
     setDatos(formatedData);
+  };
+
+  const getTimeLimits = async () => {
+    setTimeLimitsList(await timeLimits())
   };
 
   useEffect(() => {
     obtenerDatos();
+    getTimeLimits();
   }, []);
 
   const handleAcceptedFiles = (files: any) => {
@@ -84,17 +97,48 @@ const ProjectsCreate = () => {
 
   const handleQuestionTypeChange = (event) => {
     const selectedType = event.target.value;
-    // Dependiendo del tipo seleccionado, actualiza el estado isRadio
     if (selectedType === '0') {
       setIsSingleSelect(true);
+      setIsSort(false);
 
       datos.forEach(function (answer) {
         answer.correct = false
       });
 
+    } else if (selectedType === '1') {
 
+      setIsSingleSelect(false);
+      setIsSort(false);
+
+    } else if (selectedType === '2') {
+      setIsSort(true);
+    }
+  };
+
+  const timeLimitsHumanFriendly = (seconds) => {
+
+    let text = ""
+    if (seconds < 60) {
+      return `${seconds} seconds`;
+    } else if (seconds >= 60 && seconds < 120) {
+      const remainingSeconds = seconds % 60;
+
+      text = "1 minute"
+      if (remainingSeconds != 0) {
+        text = text + ` ${remainingSeconds} seconds`
+      }
+
+      return text;
     } else {
-      setIsSingleSelect(false); // Multi-select o Sort
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = seconds % 60;
+
+      text = `${minutes} minutes`
+      if (remainingSeconds != 0) {
+        text = text + ` ${remainingSeconds} seconds`
+      }
+
+      return text;
     }
   };
 
@@ -103,7 +147,7 @@ const ProjectsCreate = () => {
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumbs */}
-          <Breadcrumbs title="Projects" breadcrumbItem="Create New" />
+          <Breadcrumbs title="Questions" breadcrumbItem="Create Question" />
           <Form id="createproject-form" onSubmit={(e: any) => {
             e.preventDefault();
             return false;
@@ -130,6 +174,7 @@ const ProjectsCreate = () => {
                         </div>
                         <div>
                           <Label>Insert Media (optional)</Label>
+
                           <Dropzone
                             onDrop={(acceptedFiles: any) => {
                               handleAcceptedFiles(acceptedFiles);
@@ -186,7 +231,11 @@ const ProjectsCreate = () => {
                           </div>
                         </div>
 
-                        <SingleSelect answers={datos} updateDatos={ddad} isSingleSelect={isSingleSelect} />
+                        {isSort ? (
+                          <p>Question Type Sort - Not Implemented</p>
+                        ) : (
+                          <SingleSelect answers={datos} updateDatos={ddad} isSingleSelect={isSingleSelect} />
+                        )}
 
                       </CardBody>
                     </Card>
@@ -196,7 +245,7 @@ const ProjectsCreate = () => {
                       <CardBody>
                         <h5 className="card-title mb-3">Settings</h5>
                         <div className="mb-3">
-                          <Label htmlFor="project-status-input">Question Type</Label>
+                          <Label htmlFor="project-status-input">Answer Type</Label>
                           <select className="form-select pageSize" id="project-status-input" onChange={handleQuestionTypeChange}>
                             <option value="0">Single Select</option>
                             <option value="1">Multi-select</option>
@@ -209,14 +258,12 @@ const ProjectsCreate = () => {
                           <Label htmlFor="project-visibility-input">Time Limit</Label>
                           <select className="form-select pageSize" id="project-visibility-input">
                             <option value="select">Select</option>
+                            {timeLimitsList.map((it, index) => (
+                              <option key={index} value={it.time_in_seconds}>{
+                                timeLimitsHumanFriendly(it.time_in_seconds)
 
-                            <option value="Private">20 seconds</option>
-                            <option value="Private">30 seconds</option>
-                            <option value="Private">1 minute</option>
-                            <option value="Private">1 minute 30 seconds</option>
-                            <option value="Private">2 minutes</option>
-                            <option value="Private">3 minutes</option>
-                            <option value="Private">4 minutes</option>
+                              }</option>
+                            ))}
                           </select>
                         </div>
                       </CardBody>
@@ -230,24 +277,14 @@ const ProjectsCreate = () => {
                           <Label htmlFor="project-visibility-input">Question Level</Label>
                           <select className="form-select pageSize" id="project-visibility-input">
                             <option value="select">Select</option>
-                            <option value="H1">H1</option>
-                            <option value="H2">H2</option>
-                            <option value="H3">H3</option>
-                            <option value="H4">H4</option>
-                            <option value="H5">H5</option>
-                            <option value="H6">H6</option>
+
+                            <option key="0" value="{it.name}">"wtf"</option>
+
+                           
                           </select>
                         </div>
 
-                        <div className="mb-3">
-                          <Label htmlFor="project-visibility-input">Difficulty</Label>
-                          <select className="form-select pageSize" id="project-visibility-input">
-                            <option value="select">Select</option>
-                            <option value="easy">Easy</option>
-                            <option value="medium">Medium</option>
-                            <option value="hard">Hard</option>
-                          </select>
-                        </div>
+                            
 
                         <div>
                           <Label htmlFor="project-visibility-input">Score calculation</Label>
@@ -300,10 +337,29 @@ const ProjectsCreate = () => {
                                     <thead className="table-light">
                                       <tr>
                                         <th>Level</th>
-                                        <th>Multiplier</th>
+                                        <th>Score</th>
                                       </tr>
                                     </thead>
                                     <tbody>
+                                    <tr key="0">
+                                          <th scope="row">test</th>
+                                          <td>
+                                            <div className="col-md-10">
+                                              <input
+                                                className="form-control"
+                                                type="text"
+                                                defaultValue="0.0"
+                                              />
+                                            </div>
+                                          </td>
+                                        </tr>
+
+
+                                      
+                                    </tbody>
+
+                                   {/* 
+                                   <tbody>
                                       <tr>
                                         <th scope="row">H1</th>
                                         <td><div className="col-md-10">
@@ -365,7 +421,7 @@ const ProjectsCreate = () => {
                                           />
                                         </div></td>
                                       </tr>
-                                    </tbody>
+                                    </tbody> */}
                                   </Table>
                                 </div>
 
@@ -383,7 +439,7 @@ const ProjectsCreate = () => {
                   </Col>
                   <Col lg={8}>
                     <div className="text-end mb-4">
-                      <Button type="submit" color="primary">Create Project</Button>
+                      <Button type="submit" color="primary">Create Answer</Button>
                     </div>
                   </Col>
                 </Row>
@@ -395,4 +451,4 @@ const ProjectsCreate = () => {
   );
 };
 
-export default ProjectsCreate;
+export default CreateQuestion;

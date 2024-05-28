@@ -16,18 +16,20 @@ const loginSlice = createSlice({
         loginSuccess(state, action) {
             const cookies = new Cookies(null, { path: '/' });
             const expirationDate = new Date();
-            expirationDate.setDate(expirationDate.getDate() + 7); // Set expiration 7 days from now
+            expirationDate.setDate(expirationDate.getDate() + 7); 
             
             console.log(action.payload)
             cookies.remove('authToken');
             cookies.set('authToken', action.payload['authorization'], { expires: expirationDate });
+
+            localStorage.setItem("authUser", JSON.stringify(action.payload));
 
             state.user = action.payload
             state.loading = false;
             state.errorMsg = false;
         },
         apiError(state, action) {
-            state.error = action.payload;
+            state.error = action.payload; // Aqui van los mensajes de error
             state.loading = true;
             state.isUserLogout = false;
             state.errorMsg = true;

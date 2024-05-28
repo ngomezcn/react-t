@@ -25,7 +25,7 @@ import { useFormik } from "formik";
 import { useSelector, useDispatch } from "react-redux";
 
 //import thunk
-import { emailVerification, resetLoginMsgFlag, socialLogin } from "slices/auth/login/thunk";
+import { emailVerification, resetLoginMsgFlag } from "slices/auth/login/thunk";
 
 import withRouter from "Components/Common/withRouter";
 import { createSelector } from 'reselect';
@@ -75,13 +75,6 @@ const TwostepVerification = (props: any) => {
     }
   });
 
-  const signIn = (type: any) => {
-    dispatch(socialLogin(type, props.router.navigate))
-  }
-
-  const socialResponse = (type: any) => {
-    signIn(type)
-  }
 
   useEffect(() => {
     if (error) {
@@ -235,7 +228,7 @@ const TwostepVerification = (props: any) => {
                   Didn't receive a code ? <Link to="#" className="fw-medium text-primary"> Resend</Link>
                 </p>
                 <p>
-                  © {new Date().getFullYear()} Skote. Crafted with <i className="mdi mdi-heart text-danger"></i> by Themesbrand
+                  © {new Date().getFullYear()} Mercantec. Crafted with <i className="mdi mdi-heart text-danger"></i> by Themesbrand
                 </p>
               </div>
             </Col>

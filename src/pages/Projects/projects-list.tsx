@@ -42,7 +42,7 @@ const ProjectStatus = ({ status }: any) => {
 const ProjectsList = () => {
 
   //meta title
-  document.title = "Project List | Skote - React Admin & Dashboard Template";
+  document.title = "Project List | Mercantec - Quiz Project";
 
   const dispatch = useDispatch<any>();
   const navigate = useNavigate();

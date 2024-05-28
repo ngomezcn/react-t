@@ -27,7 +27,7 @@ import Breadcrumbs from "../../Components/Common/Breadcrumb";
 const FormWizard = () => {
 
   //meta title
-  document.title = "Form Wizard | Skote - React Admin & Dashboard Template";
+  document.title = "Form Wizard | Mercantec - Quiz Project";
 
   const [activeTab, setactiveTab] = useState<number>(1)
   const [activeTabVartical, setoggleTabVertical] = useState<number>(1)

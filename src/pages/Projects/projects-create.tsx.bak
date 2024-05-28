@@ -14,10 +14,10 @@ import SimpleBar from "simplebar-react";
 import { Link } from "react-router-dom";
 import { projectAssignedTo } from "../../common/data";
 
-const ProjectsCreate = () => {
+const CreateQuestion = () => {
 
   //meta title
-  document.title = "Create New Project | Skote - React Admin & Dashboard Template";
+  document.title = "Create New Project | Mercantec - Quiz Project";
 
   const [selectedFiles, setSelectedFiles] = useState<any>([]);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -329,4 +329,4 @@ const ProjectsCreate = () => {
   );
 };
 
-export default ProjectsCreate;
+export default CreateQuestion;

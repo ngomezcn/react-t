@@ -53,7 +53,7 @@ const fakeBackend = () => {
   // This sets the mock adapter on the default instance
   const mock = new MockAdapter(axios, { onNoMatch: "passthrough" });
 
-  mock.onPost(url.POST_FAKE_LOGIN).reply(config => {
+ /* mock.onPost(url.POST_FAKE_LOGIN).reply(config => {
     const user = JSON.parse(config["data"]);
     const validUser = users.filter(
       usr => usr.email === user.email && usr.password === user.password
@@ -118,7 +118,7 @@ const fakeBackend = () => {
       });
     });
   });
-
+*/
   mock.onPost("/post-jwt-profile").reply((config: any) => {
     const user = JSON.parse(config["data"]);
 

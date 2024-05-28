@@ -7,7 +7,7 @@ import Breadcrumbs from "../../Components/Common/Breadcrumb";
 
 const UiColors = () => {
   //meta title
-  document.title = "Colors | Skote - React Admin & Dashboard Template";
+  document.title = "Colors | Mercantec - Quiz Project";
   return (
     <React.Fragment>
       <div className="page-content">

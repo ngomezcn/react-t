@@ -232,15 +232,15 @@ const ProjectComponent = ({ answers, updateDatos, isSingleSelect }) => {
             <EcommerceOrdersModal isOpen={modal1} toggle={toggleViewModal} editDetails={editDetails} />
 
             <TableContainer
-                columns={columns}
-                data={answers || []}
-                isAddButton={true}
-                handleUserClick={handleOrderClicks}
-                buttonClass="btn btn-success btn-rounded waves-effect waves-light mb-2 me-2 addOrder-modal"
-                buttonName=" Add Answer"
-                tableClass="align-middle table-nowrap dt-responsive nowrap w-100 table-check dataTable no-footer dtr-inline"
-                theadClass="table-light"
-            />
+    columns={columns}
+    data={answers || []}
+    isAddButton={true}
+    handleUserClick={handleOrderClicks}
+    buttonClass="btn btn-success btn-rounded waves-effect waves-light mb-2 me-2 addOrder-modal float-start" // Añade la clase float-start para alinear a la izquierda
+    buttonName=" Add Answer"
+    tableClass="align-middle table-nowrap dt-responsive nowrap w-100 table-check dataTable no-footer dtr-inline"
+    theadClass="table-light"
+/>
 
             <Modal isOpen={modal} toggle={toggle}>
                 

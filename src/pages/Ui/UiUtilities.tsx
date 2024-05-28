@@ -23,7 +23,7 @@ import img3 from "../../assets/images/small/img-3.jpg";
 
 function UiUtilities() {
     //meta title
-    document.title = "Utilities | Skote - React Admin & Dashboard Template";
+    document.title = "Utilities | Mercantec - Quiz Project";
     return (
         <React.Fragment>
             <div className="page-content">

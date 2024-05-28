@@ -22,7 +22,7 @@ import * as Yup from 'yup';
 
 const FormLayouts = () => {
   //meta title
-  document.title = "Form Layouts | Skote - React Admin & Dashboard Template";
+  document.title = "Form Layouts | Mercantec - Quiz Project";
 
   //Grid form
   const formik: any = useFormik({

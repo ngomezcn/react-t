@@ -45,7 +45,7 @@ const tasks = [
       },
       {
         id: "4",
-        title: "Create a Skote Logo",
+        title: "Create a Mercantec Logo",
         date: "15 Oct, 2019",
         badgeText: "Waiting",
         badgeColor: "secondary",
@@ -131,7 +131,7 @@ const tasks = [
       },
       {
         id: "12",
-        title: "Skote landing Psd",
+        title: "Mercantec landing Psd",
         date: "15 Oct, 2019",
         badgeText: "Waiting",
         badgeColor: "secondary",
@@ -140,7 +140,7 @@ const tasks = [
         kanbanImgtextColor: "bg-info",
         kanbanImgtext: [{ id: 1, imageText: "2+" }],
         userImages: [{ id: 7, img: avatar7 }, { id: 8, img: avatar8 }, { id: 0, imageText: "D" },],
-        taskdesc: "testing Skote landing"
+        taskdesc: "testing Mercantec landing"
       },
     ],
   },
@@ -295,7 +295,7 @@ const kanbanBoardData = [
       },
       {
         id: 13,
-        description: "Create a Skote Logo",
+        description: "Create a Mercantec Logo",
         date: "15 Oct, 2019",
         members: [
           {
@@ -364,7 +364,7 @@ const kanbanBoardData = [
       },
       {
         id: 23,
-        description: "Skote Dashboard UI",
+        description: "Mercantec Dashboard UI",
         date: "13 Oct, 2019",
         members: [
           {
@@ -437,7 +437,7 @@ const kanbanBoardData = [
       },
       {
         id: 33,
-        description: "Skote landing Psd",
+        description: "Mercantec landing Psd",
         date: "15 Oct, 2019",
         members: [
           {

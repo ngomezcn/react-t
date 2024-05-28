@@ -41,7 +41,7 @@ const LoadingContainer = () => <div>Loading...</div>
 
 const UiLightbox = (props: any) => {
   //meta title
-  document.title = "Lightbox | Skote - React Admin & Dashboard Template";
+  document.title = "Lightbox | Mercantec - Quiz Project";
 
   const [photoIndex, setphotoIndex] = useState<number>(0);
   const [isFits, setisFits] = useState<boolean>(false);
@@ -136,7 +136,7 @@ const UiLightbox = (props: any) => {
                             setisFits(true);
                           }}
                           className="img-fluid"
-                          alt="Skote"
+                          alt="Mercantec"
                           src={img2}
                           width="145"
                         />

@@ -37,7 +37,7 @@ interface cryptoMyAssetsType {
 const CryptoLending = () => {
 
   //meta title
-  document.title = "Lending | Skote - React Admin & Dashboard Template";
+  document.title = "Lending | Mercantec - Quiz Project";
 
   const [isMenu, setIsMenu] = useState<boolean>(false);
 

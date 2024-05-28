@@ -7,7 +7,7 @@ import Breadcrumbs from "../../Components/Common/Breadcrumb";
 
 const EmailBasicTemplate: React.FC = () => {
   //meta title
-  document.title = "Basic Action | Skote - React Admin & Dashboard Template";
+  document.title = "Basic Action | Mercantec - Quiz Project";
   return (
     <React.Fragment>
       <div className="page-content">
@@ -280,7 +280,7 @@ const EmailBasicTemplate: React.FC = () => {
                                         }}
                                         valign="top"
                                       >
-                                        <b>Skote</b>
+                                        <b>Mercantec</b>
                                         <p>Support Team</p>
                                       </td>
                                     </tr>
@@ -308,7 +308,7 @@ const EmailBasicTemplate: React.FC = () => {
                                         }}
                                         valign="top"
                                       >
-                                        © {new Date().getFullYear()} Skote
+                                        © {new Date().getFullYear()} Mercantec
                                       </td>
                                     </tr>
                                   </tbody>

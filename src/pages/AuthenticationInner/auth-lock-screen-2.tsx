@@ -16,7 +16,7 @@ import CarouselPage from "./CarouselPage";
 const LockScreen2 = (props: any) => {
 
   //meta title
-  document.title = "Lock Screen 2 | Skote - React Admin & Dashboard Template";
+  document.title = "Lock Screen 2 | Mercantec - Quiz Project";
 
   const validation : any = useFormik({
     // enableReinitialize : use this flag when initial values needs to be changed
@@ -132,7 +132,7 @@ const LockScreen2 = (props: any) => {
                       <p className="mb-0">
                         ©{" "}
                         {new Date().getFullYear()}{" "}
-                        Skote. Crafted with{" "}
+                        Mercantec. Crafted with{" "}
                         <i className="mdi mdi-heart text-danger"></i> by
                         Themesbrand
                       </p>

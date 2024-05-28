@@ -11,7 +11,7 @@ import Breadcrumbs from "../../Components/Common/Breadcrumb";
 const EcommerceAddProduct = () => {
 
   //meta title
-  document.title = "Add Product | Skote - React Admin & Dashboard Template";
+  document.title = "Add Product | Mercantec - Quiz Project";
 
   const [selectedFiles, setselectedFiles] = useState<any>([])
 

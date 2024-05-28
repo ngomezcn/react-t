@@ -18,7 +18,7 @@ import Spinners from "Components/Common/Spinner";
 
 const InvoicesList = () => {
   //meta title
-  document.title = "Invoice List | Skote - React Admin & Dashboard Template";
+  document.title = "Invoice List | Mercantec - Quiz Project";
 
   const dispatch = useDispatch<any>();
 

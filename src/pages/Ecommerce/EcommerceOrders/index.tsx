@@ -34,7 +34,7 @@ import { EcoAction } from "../type";
 function EcommerceOrder() {
 
   //meta title
-  document.title = "Orders | Skote - React Admin & Dashboard Template";
+  document.title = "Orders | Mercantec - Quiz Project";
 
   const dispatch = useDispatch<any>();
   const selectProperties = createSelector(

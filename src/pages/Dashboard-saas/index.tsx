@@ -17,7 +17,7 @@ import TotalSellingProduct from "./total-selling-product"
 const DashboardSaas: React.FC = () => {
 
   //Meta Title  
-  document.title = "Saas Dashboard | Skote - React Admin & Dashboard Template"
+  document.title = "Saas Dashboard | Mercantec - Quiz Project"
 
   return (
     <React.Fragment>

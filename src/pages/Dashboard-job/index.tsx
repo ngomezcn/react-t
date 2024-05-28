@@ -13,7 +13,7 @@ import StatisticApplication from './StatisticsApplications';
 
 const DashboardJob = () => {
 
-    document.title = "Job Dashboard | Skote - React Admin & Dashboard Template"
+    document.title = "Job Dashboard | Mercantec - Quiz Project"
 
     return (
         <React.Fragment>

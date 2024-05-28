@@ -7,7 +7,7 @@ import AboutUs from './AboutUs';
 import Sidebar from './Sidebar';
 
 const CandidateOverview = () => {
-    document.title = "Candidate Overview | Skote - React Admin & Dashboard Template";
+    document.title = "Candidate Overview | Mercantec - Quiz Project";
 
     const handleSaveCv = (ele: any) => {
         if (ele?.closest("button").classList.contains("active")) {

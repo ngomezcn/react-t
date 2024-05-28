@@ -32,7 +32,7 @@ import { createSelector } from 'reselect';
 const EcommerceProducts = (props: any) => {
 
   //meta title
-  document.title = "Products | Skote - React Admin & Dashboard Template";
+  document.title = "Products | Mercantec - Quiz Project";
 
   const dispatch: any = useDispatch();
 

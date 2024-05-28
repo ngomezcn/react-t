@@ -7,7 +7,7 @@ import Overview from './Overview';
 import DetailsSection from './DetailsSection';
 
 const JobDetails = () => {
-    document.title = "Job Details | Skote - React Admin & Dashboard Template";
+    document.title = "Job Details | Mercantec - Quiz Project";
    
     return (
         <React.Fragment>

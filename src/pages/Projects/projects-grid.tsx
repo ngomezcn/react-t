@@ -19,7 +19,7 @@ import Paginations from "Components/Common/Pagination";
 const ProjectsGrid = () => {
 
   //meta title
-  document.title = "Projects Grid | Skote - React Admin & Dashboard Template";
+  document.title = "Projects Grid | Mercantec - Quiz Project";
 
   const dispatch = useDispatch<any>();
 

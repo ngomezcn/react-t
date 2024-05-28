@@ -16,7 +16,7 @@ import CustomActiveShapePieChart from '../Allcharts/rechart/CustomActiveShapePie
 const ReCharts = () => {
 
     //meta title
-    document.title = "Re Charts | Skote - React Admin & Dashboard Template"
+    document.title = "Re Charts | Mercantec - Quiz Project"
 
     return (
         <React.Fragment>

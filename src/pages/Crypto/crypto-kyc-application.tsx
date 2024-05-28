@@ -40,7 +40,7 @@ import moment from "moment";
 const CryptoKYCApplication = () => {
 
   //meta title
-  document.title = "KYC Application | Skote - React Admin & Dashboard Template";
+  document.title = "KYC Application | Mercantec - Quiz Project";
 
   const [modal, setModal] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<number>(1);

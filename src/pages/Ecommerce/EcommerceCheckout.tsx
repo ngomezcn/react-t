@@ -43,7 +43,7 @@ const orderSummary: OrderSummary[] = [
 const EcommerceCheckout = () => {
 
   //meta title
-  document.title = "Checkout | Skote - React Admin & Dashboard Template";
+  document.title = "Checkout | Mercantec - Quiz Project";
 
   const [activeTab, setActiveTab] = useState<any>("1")
   const [selectedGroup, setSelectedGroup] = useState<any>(null)

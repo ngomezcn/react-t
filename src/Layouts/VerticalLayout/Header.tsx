@@ -19,7 +19,7 @@ import dropbox from "../../assets/images/brands/dropbox.png";
 import mail_chimp from "../../assets/images/brands/mail_chimp.png";
 import slack from "../../assets/images/brands/slack.png";
 
-import logo from "../../assets/images/logo.svg";
+import logo from "../../assets/images/logo.png";
 import logoLightSvg from "../../assets/images/logo-light.svg";
 
 //i18n
@@ -108,7 +108,7 @@ const Header = (props: any) => {
             >
               <i className="fa fa-fw fa-bars" />
             </button>
-            <form className="app-search d-none d-lg-block">
+           {/* <form className="app-search d-none d-lg-block">
               <div className="position-relative">
                 <input
                   type="text"
@@ -263,7 +263,7 @@ const Header = (props: any) => {
                   </Col>
                 </Row>
               </DropdownMenu>
-            </Dropdown>
+            </Dropdown>*/}
           </div>
           <div className="d-flex">
             <div className="dropdown d-inline-block d-lg-none ms-2">

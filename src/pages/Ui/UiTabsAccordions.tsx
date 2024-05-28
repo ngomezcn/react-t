@@ -25,7 +25,7 @@ import classnames from "classnames";
 function UiTabsAccordions(props: any) {
 
   //meta title
-  document.title = "Tabs & Accordions | Skote - React Admin & Dashboard Template";
+  document.title = "Tabs & Accordions | Mercantec - Quiz Project";
 
   const [activeTab, setactiveTab] = useState("1");
   const [activeTab1, setactiveTab1] = useState("5");

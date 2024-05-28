@@ -17,7 +17,7 @@ import Breadcrumbs from "../../Components/Common/Breadcrumb";
 const FormXeditable = () => {
 
   //meta title
-  document.title = "Form Xeditable | Skote - React Admin & Dashboard Template";
+  document.title = "Form Xeditable | Mercantec - Quiz Project";
 
   /** Confirm button */
   const confirmElement = (

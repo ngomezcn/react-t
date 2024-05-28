@@ -58,9 +58,9 @@ const projects = [
       ],
     },
     files: [
-      { name: "Skote Landing.Zip", size: "3.25 MB", link: "#" },
-      { name: "Skote Admin.Zip", size: "3.15 MB", link: "#" },
-      { name: "Skote Logo.Zip", size: "2.02 MB", link: "#" },
+      { name: "Mercantec Landing.Zip", size: "3.25 MB", link: "#" },
+      { name: "Mercantec Admin.Zip", size: "3.15 MB", link: "#" },
+      { name: "Mercantec Logo.Zip", size: "2.02 MB", link: "#" },
       { name: "Veltrix admin.Zip", size: "2.25 MB", link: "#" },
     ],
     comments: [
@@ -111,9 +111,9 @@ const projects = [
       ],
     },
     files: [
-      { name: "Skote Landing.Zip", size: "3.25 MB", link: "#" },
-      { name: "Skote Admin.Zip", size: "3.15 MB", link: "#" },
-      { name: "Skote Logo.Zip", size: "2.02 MB", link: "#" },
+      { name: "Mercantec Landing.Zip", size: "3.25 MB", link: "#" },
+      { name: "Mercantec Admin.Zip", size: "3.15 MB", link: "#" },
+      { name: "Mercantec Logo.Zip", size: "2.02 MB", link: "#" },
       { name: "Veltrix admin.Zip", size: "2.25 MB", link: "#" },
     ],
     comments: [
@@ -164,9 +164,9 @@ const projects = [
       ],
     },
     files: [
-      { name: "Skote Landing.Zip", size: "3.25 MB", link: "#" },
-      { name: "Skote Admin.Zip", size: "3.15 MB", link: "#" },
-      { name: "Skote Logo.Zip", size: "2.02 MB", link: "#" },
+      { name: "Mercantec Landing.Zip", size: "3.25 MB", link: "#" },
+      { name: "Mercantec Admin.Zip", size: "3.15 MB", link: "#" },
+      { name: "Mercantec Logo.Zip", size: "2.02 MB", link: "#" },
       { name: "Veltrix admin.Zip", size: "2.25 MB", link: "#" },
     ],
     comments: [
@@ -218,9 +218,9 @@ const projects = [
       ],
     },
     files: [
-      { name: "Skote Landing.Zip", size: "3.25 MB", link: "#" },
-      { name: "Skote Admin.Zip", size: "3.15 MB", link: "#" },
-      { name: "Skote Logo.Zip", size: "2.02 MB", link: "#" },
+      { name: "Mercantec Landing.Zip", size: "3.25 MB", link: "#" },
+      { name: "Mercantec Admin.Zip", size: "3.15 MB", link: "#" },
+      { name: "Mercantec Logo.Zip", size: "2.02 MB", link: "#" },
       { name: "Veltrix admin.Zip", size: "2.25 MB", link: "#" },
     ],
     comments: [
@@ -250,7 +250,7 @@ const projects = [
   {
     id: 4,
     img: companies05,
-    name: "Skote Dashboard UI",
+    name: "Mercantec Dashboard UI",
     description: "Separate existence is a myth",
     status: "Completed",
     color: "success",
@@ -272,9 +272,9 @@ const projects = [
       ],
     },
     files: [
-      { name: "Skote Landing.Zip", size: "3.25 MB", link: "#" },
-      { name: "Skote Admin.Zip", size: "3.15 MB", link: "#" },
-      { name: "Skote Logo.Zip", size: "2.02 MB", link: "#" },
+      { name: "Mercantec Landing.Zip", size: "3.25 MB", link: "#" },
+      { name: "Mercantec Admin.Zip", size: "3.15 MB", link: "#" },
+      { name: "Mercantec Logo.Zip", size: "2.02 MB", link: "#" },
       { name: "Veltrix admin.Zip", size: "2.25 MB", link: "#" },
     ],
     comments: [
@@ -325,9 +325,9 @@ const projects = [
       ],
     },
     files: [
-      { name: "Skote Landing.Zip", size: "3.25 MB", link: "#" },
-      { name: "Skote Admin.Zip", size: "3.15 MB", link: "#" },
-      { name: "Skote Logo.Zip", size: "2.02 MB", link: "#" },
+      { name: "Mercantec Landing.Zip", size: "3.25 MB", link: "#" },
+      { name: "Mercantec Admin.Zip", size: "3.15 MB", link: "#" },
+      { name: "Mercantec Logo.Zip", size: "2.02 MB", link: "#" },
       { name: "Veltrix admin.Zip", size: "2.25 MB", link: "#" },
     ],
     comments: [
@@ -392,9 +392,9 @@ const projects = [
       ],
     },
     files: [
-      { name: "Skote Landing.Zip", size: "3.25 MB", link: "#" },
-      { name: "Skote Admin.Zip", size: "3.15 MB", link: "#" },
-      { name: "Skote Logo.Zip", size: "2.02 MB", link: "#" },
+      { name: "Mercantec Landing.Zip", size: "3.25 MB", link: "#" },
+      { name: "Mercantec Admin.Zip", size: "3.15 MB", link: "#" },
+      { name: "Mercantec Logo.Zip", size: "2.02 MB", link: "#" },
       { name: "Veltrix admin.Zip", size: "2.25 MB", link: "#" },
     ],
     comments: [
@@ -447,9 +447,9 @@ const projects = [
       ],
     },
     files: [
-      { name: "Skote Landing.Zip", size: "3.25 MB", link: "#" },
-      { name: "Skote Admin.Zip", size: "3.15 MB", link: "#" },
-      { name: "Skote Logo.Zip", size: "2.02 MB", link: "#" },
+      { name: "Mercantec Landing.Zip", size: "3.25 MB", link: "#" },
+      { name: "Mercantec Admin.Zip", size: "3.15 MB", link: "#" },
+      { name: "Mercantec Logo.Zip", size: "2.02 MB", link: "#" },
       { name: "Veltrix admin.Zip", size: "2.25 MB", link: "#" },
     ],
     comments: [
@@ -604,7 +604,7 @@ const projectListData = [
   {
     id: 5,
     img: companies05,
-    name: "Skote Dashboard UI",
+    name: "Mercantec Dashboard UI",
     description: "Separate existence is a myth",
     dueDate: "22 Oct, 19",
     status: "Completed",

@@ -19,7 +19,7 @@ import { series } from "./crypto-exchange-series";
 const CryptoExchange = () => {
 
   //meta title
-  document.title = "Exchange | Skote - React Admin & Dashboard Template";
+  document.title = "Exchange | Mercantec - Quiz Project";
 
   const options: any = {
     chart: {

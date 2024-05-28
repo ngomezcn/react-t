@@ -24,7 +24,7 @@ import { CryptoSell, CrytoBuy } from "./CryptoWallet/CryptoBuySell";
 const CryptoBuySell = () => {
 
   //meta title
-  document.title = "Buy/Sell | Skote - React Admin & Dashboard Template";
+  document.title = "Buy/Sell | Mercantec - Quiz Project";
 
   const [activeTab, setActiveTab] = useState<any>("1");
   const [isMenu, setIsMenu] = useState<boolean>(false);

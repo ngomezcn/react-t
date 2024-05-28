@@ -1,5 +1,5 @@
 //REGISTER
-export const POST_FAKE_REGISTER = "http://localhost:8080/api/v1/auth/sign-up"; //"/post-fake-register";
+export const POST_REGISTER = "http://localhost:8080/api/v1/auth/sign-up"; //"/post-fake-register";
 
 export const POST_EMAIL_VERIFICATION = "http://localhost:8080/api/v1/auth/email-verification"; 
 
@@ -7,9 +7,12 @@ export const POST_JWT_VALIDATION = "http://localhost:8080/api/v1/auth/jwt-valida
 
 export const POST_PASSWORD_FORGET = "http://localhost:8080/api/v1/auth/reset-password";
 
+export const GET_TIME_LIMITS = "http://localhost:8080/api/v1/time-limits";
+
+export const GET_EDUCATION_LEVELS = "http://localhost:8080/api/v1/education-levels";
 
 //LOGIN
-export const POST_FAKE_LOGIN = "http://localhost:8080/api/v1/auth/log-in"; //"/post-fake-login";
+export const POST_LOGIN = "http://localhost:8080/api/v1/auth/log-in"; //"/post-fake-login";
 export const POST_FAKE_JWT_LOGIN = "/post-jwt-login";
 export const POST_FAKE_PASSWORD_FORGET = "/fake-forget-pwd";
 export const POST_FAKE_JWT_PASSWORD_FORGET = "/jwt-forget-pwd";

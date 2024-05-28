@@ -21,7 +21,7 @@ import ApexRevenue from "../ApexRevenue";
 const ContactsProfile = () => {
 
   //meta title
-  document.title = "Profile | Skote - React Admin & Dashboard Template";
+  document.title = "Profile | Mercantec - Quiz Project";
 
   // eslint-disable-next-line no-unused-vars
   const miniCards = [

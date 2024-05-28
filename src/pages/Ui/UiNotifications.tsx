@@ -10,7 +10,7 @@ import Breadcrumbs from "../../Components/Common/Breadcrumb";
 const UiNotifications = () => {
 
   //meta title
-  document.title = "Notifications | Skote - React Admin & Dashboard Template";
+  document.title = "Notifications | Mercantec - Quiz Project";
 
   const [showEasing, setshowEasing] = useState<any>("swing");
   const [hideEasing, sethideEasing] = useState<any>("linear");

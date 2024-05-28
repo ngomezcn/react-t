@@ -23470,7 +23470,7 @@ const IconMaterialdesign = () => {
   })
 
   //meta title
-  document.title = "Material Design | Skote - React Admin & Dashboard Template";
+  document.title = "Material Design | Mercantec - Quiz Project";
 
   return (
     <React.Fragment>

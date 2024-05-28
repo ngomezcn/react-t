@@ -77,7 +77,7 @@ interface KanbanColumn {
 }
 
 const TasksKanban = () => {
-  document.title = "Kanban Board | Skote - React Admin & Dashboard Template"
+  document.title = "Kanban Board | Mercantec - Quiz Project"
   const dispatch = useDispatch<any>()
   const [images, setImages] = useState<any>([])
 

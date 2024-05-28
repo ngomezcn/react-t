@@ -35,7 +35,7 @@ import { createSelector } from 'reselect';
 const Calender = (props: any) => {
 
   //meta title
-  document.title = "Full Calendar | Skote - React Admin & Dashboard Template";
+  document.title = "Full Calendar | Mercantec - Quiz Project";
 
   const dispatch = useDispatch<any>();
 

@@ -22,7 +22,7 @@ import { handleSearchData } from "Components/Common/SearchFile";
 const CryptoOrders = () => {
 
   //meta title
-  document.title = "Orders | Skote - React Admin & Dashboard Template";
+  document.title = "Orders | Mercantec - Quiz Project";
 
   const [activeTab, setActiveTab] = useState<any>("1");
   const dispatch = useDispatch<any>();

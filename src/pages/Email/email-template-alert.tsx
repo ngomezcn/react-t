@@ -7,7 +7,7 @@ import Breadcrumbs from "../../Components/Common/Breadcrumb";
 
 const EmailAlertTemplate = () => {
   //meta title
-  document.title = "Alert Email | Skote - React Admin & Dashboard Template";
+  document.title = "Alert Email | Mercantec - Quiz Project";
   return (
     <React.Fragment>
       <div className="page-content">
@@ -308,7 +308,7 @@ const EmailAlertTemplate = () => {
                                         }}
                                         valign="top"
                                       >
-                                        Thanks for choosing <b>Skote</b>{" "}
+                                        Thanks for choosing <b>Mercantec</b>{" "}
                                         Admin.
                                       </td>
                                     </tr>
@@ -334,7 +334,7 @@ const EmailAlertTemplate = () => {
                                         }}
                                         valign="top"
                                       >
-                                        <b>Skote</b>
+                                        <b>Mercantec</b>
                                         <p>Support Team</p>
                                       </td>
                                     </tr>
@@ -362,7 +362,7 @@ const EmailAlertTemplate = () => {
                                         }}
                                         valign="top"
                                       >
-                                        © {new Date().getFullYear()} Skote
+                                        © {new Date().getFullYear()} Mercantec
                                       </td>
                                     </tr>
                                   </tbody>

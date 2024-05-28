@@ -144,7 +144,7 @@ const tasksData: tasksDataType[] = [
     {
 
         id: 1,
-        task: "Skote Saas Dashboard",
+        task: "Mercantec Saas Dashboard",
         assignedTo: "Mark"
     },
     {
@@ -174,7 +174,7 @@ const tasksData: tasksDataType[] = [
     },
     {
         id: 7,
-        task: "Skote Saas Dashboard",
+        task: "Mercantec Saas Dashboard",
         assignedTo: "Mark"
     }
 ]

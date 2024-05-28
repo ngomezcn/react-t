@@ -1,6 +1,8 @@
 import { APIClient } from "./api_helper";
+import axios, { AxiosResponse, AxiosError } from 'axios';
 
 import * as url from "./url_helper";
+import { setAuthorization } from "./api_helper";
 
 const api = new APIClient();
 
@@ -16,47 +18,21 @@ export const isUserAuthenticated = () => {
   return getLoggedInUser() !== null;
 };
 
-// Register Method
-/*export const postFakeRegister = (data: any) => {
-  return api.create(url.POST_FAKE_REGISTER, data)
-    .catch(err => {
-
-      console.log(err)
-
-      let message;
-      
-      if (err.response && err.response.status) {
-        switch (err.response.status) {
-          case 404:
-            message = "Sorry! the page you are looking for could not be found";
-            break;
-          case 500:
-            message = "Sorry! something went wrong, please contact our support team";
-            break;
-          case 409:
-            message = "Invalid credentials";
-            break;
-          default:
-            message = err[1];
-            break;
-        }
-      }
-      throw message;
-    });
-};*/
-
-
-export const postFakeRegister = async (data: any) => {
+export const postRegister = async (data: any) => {
   try {
-    const response = await api.create(url.POST_FAKE_REGISTER, data);
-    // Hacer algo con la respuesta, si es necesario
+    const response = await api.create(url.POST_REGISTER, data);
     return response;
   } catch (error) {
-    // Manejar el error aquí
-    console.error("Error al realizar el login falso:", error);
-    throw error; // Opcional: relanzar el error para que el código que llama a esta función también pueda manejarlo
+    throw error; 
   }
 };
+
+export const getTimeLimits = () => {
+  setAuthorization();
+
+  return api.get(url.GET_TIME_LIMITS, null);
+};
+
 
 export const postJwtValidation = (data: any) => api.create(url.POST_JWT_VALIDATION, data);
 
@@ -64,7 +40,8 @@ export const postJwtValidation = (data: any) => api.create(url.POST_JWT_VALIDATI
 export const postEmailVerification = (data: any) => api.create(url.POST_EMAIL_VERIFICATION, data);
 
 // Login Method
-export const postFakeLogin = (data: any) => api.create(url.POST_FAKE_LOGIN, data);
+//export const postLogin = (data: any) => api.create(url.POST_LOGIN, data);
+export const postLogin = (data: any) => api.create(url.POST_LOGIN, data)
 
 // postForgetPwd
 export const postFakeForgetPwd = (data: any) => api.create(url.POST_PASSWORD_FORGET, data);
@@ -104,9 +81,6 @@ export const postJwtLogin = (data: any) => api.create(url.POST_FAKE_JWT_LOGIN, d
 
 // postForgetPwd
 export const postJwtForgetPwd = (data: any) => api.create(url.POST_FAKE_JWT_PASSWORD_FORGET, data);
-
-// postSocialLogin
-export const postSocialLogin = (data: any) => api.create(url.SOCIAL_LOGIN, data);
 
 // Calendar
 // api.get Events

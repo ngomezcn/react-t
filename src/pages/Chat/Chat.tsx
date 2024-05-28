@@ -24,7 +24,7 @@ interface ChatState {
 const Chat: React.FC = () => {
 
   //meta title
-  document.title = "Chat | Skote - React Admin & Dashboard Template";
+  document.title = "Chat | Mercantec - Quiz Project";
 
   const dispatch = useDispatch<any>();
   const selectProperties = createSelector(
@@ -60,7 +60,7 @@ const Chat: React.FC = () => {
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumb */}
-          <Breadcrumbs title="Skote" breadcrumbItem="Chat" />
+          <Breadcrumbs title="Mercantec" breadcrumbItem="Chat" />
 
           <Row>
             <Col lg={12}>

@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import Cookies from 'universal-cookie';
 
 export const initialState = {
   registrationError: null,
@@ -15,6 +16,14 @@ const registerSlice = createSlice({
   initialState,
   reducers: {
     registerUserSuccessful(state, action) {
+      const cookies = new Cookies(null, { path: '/' });
+      const expirationDate = new Date();
+      expirationDate.setDate(expirationDate.getDate() + 7); 
+      
+      console.log(action.payload)
+      cookies.remove('authToken');
+      cookies.set('authToken', action.payload['authorization'], { expires: expirationDate });
+
       state.user = action.payload;
       state.loading = false;
       state.success = true;

@@ -372,6 +372,7 @@ const RightSidebar = ({ toggleCanvas, show }: sidebar) => {
                       </div>
                     </div>
                   </div>
+                  {/*
                   <div className="radio-toolbar imgopt-radio">
                     <span className="mb-2 d-block" id="radio-bgimg">Left Sidebar Bg Image</span>
                     <div className="d-flex gap-2 flex-wrap">
@@ -453,13 +454,22 @@ const RightSidebar = ({ toggleCanvas, show }: sidebar) => {
                       </label>
                     </div>
                   </div>
+
+                  */}
                 </React.Fragment>
               )}
               <hr className="mt-1" />
-              <div className="mb-3">
+            
+            
+            
+            {/* 
+            
+            <div className="mb-3">
                 <span className="mb-2 d-block" id="radio-title">Preloader</span>
                 <div className="form-check form-switch"><input type="checkbox" className="form-check-input checkbox" id="checkbox_1" /><label className="form-check-label" htmlFor="checkbox_1">Preloader</label></div>
               </div>
+             
+             
               <h6 className="text-center">Choose Layouts</h6>
               <div className="mb-2">
                 <a href="//skote-v-light.react.themesbrand.com"><img src={layout1} className="img-fluid img-thumbnail" alt="" /></a>
@@ -471,6 +481,11 @@ const RightSidebar = ({ toggleCanvas, show }: sidebar) => {
                 <a href="//skote-v-rtl.react.themesbrand.com"><img src={layout3} className="img-fluid img-thumbnail" alt="" /></a>
               </div>
               <a className="btn btn-primary btn-block mt-3" href="//1.envato.market/skotereact"><i className="mdi mdi-cart ms-1"></i> Purchase Now</a>
+            
+            */}
+              
+            
+            
             </div>
           </SimpleBar>
         </OffcanvasBody>

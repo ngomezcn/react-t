@@ -17,7 +17,7 @@ import { handleSearchData } from 'Components/Common/SearchFile';
 import Select from "react-select";
 
 const CandidateList = () => {
-    document.title = "Candidate List | Skote - React Admin & Dashboard Template";
+    document.title = "Candidate List | Mercantec - Quiz Project";
 
     const dispatch = useDispatch<any>();
 

@@ -8,14 +8,14 @@ import { Container, Row, Col, CardBody, Card, Button, Form, Label, Input, FormFe
 
 // import images
 import profileImg from "../../assets/images/profile-img.png";
-import logoImg from "../../assets/images/logo.svg";
+import logoImg from "../../assets/images/logo.png";
 import avatar from "../../assets/images/users/avatar-1.jpg";
 import { Link } from "react-router-dom";
 
 const LockScreen = () => {
 
   //meta title
-  document.title = "Lock Screen | Skote - React Admin & Dashboard Template";
+  document.title = "Lock Screen | Mercantec - Quiz Project";
 
   const validation : any = useFormik({
     // enableReinitialize : use this flag when initial values needs to be changed
@@ -130,7 +130,7 @@ const LockScreen = () => {
                   </Link>{" "}
                 </p>
                 <p>
-                  © {(new Date().getFullYear())} Skote. Crafted with{" "}
+                  © {(new Date().getFullYear())} Mercantec. Crafted with{" "}
                   <i className="mdi mdi-heart text-danger" /> by Themesbrand
                 </p>
               </div>

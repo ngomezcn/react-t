@@ -16,7 +16,7 @@ import Breadcrumbs from "../../Components/Common/Breadcrumb";
 
 const UiAlert = () => {
   //meta title
-  document.title = "Alert | Skote - React Admin & Dashboard Template";
+  document.title = "Alert | Mercantec - Quiz Project";
 
   const [show, setShow] = useState(false);
 
@@ -135,6 +135,8 @@ const UiAlert = () => {
                     <UncontrolledAlert color="primary">
                       A simple primary alert—check it out!
                     </UncontrolledAlert>
+
+                    
                     <UncontrolledAlert color="secondary" role="alert">
                       A simple secondary alert—check it out!
                     </UncontrolledAlert>

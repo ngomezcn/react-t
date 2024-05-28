@@ -25,7 +25,7 @@ import { deleteCart as onDeleteCart, getCart as onGetCart } from "slices/thunk";
 const EcommerceCart = () => {
 
   //meta title
-  document.title = "Cart | Skote - React Admin & Dashboard Template";
+  document.title = "Cart | Mercantec - Quiz Project";
 
   const selectProperties = createSelector(
     (state: any) => state.ecommerce,

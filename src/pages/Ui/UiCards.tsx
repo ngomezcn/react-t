@@ -33,7 +33,7 @@ import Breadcrumbs from "../../Components/Common/Breadcrumb";
 const UiCards = () => {
 
   //meta title
-  document.title = "Cards | Skote - React Admin & Dashboard Template";
+  document.title = "Cards | Mercantec - Quiz Project";
 
   return (
     <React.Fragment>
@@ -43,7 +43,7 @@ const UiCards = () => {
           <Row>
             <Col md={6} xl={3}>
               <Card>
-                <CardImg top className="img-fluid" src={img1} alt="Skote" />
+                <CardImg top className="img-fluid" src={img1} alt="Mercantec" />
                 <CardBody>
                   <CardTitle tag="h4" className="mt-0">Card title</CardTitle>
                   <CardText>
@@ -61,7 +61,7 @@ const UiCards = () => {
             </Col>
             <Col md={6} xl={3}>
               <Card>
-                <CardImg top className="img-fluid" src={img2} alt="Skote" />
+                <CardImg top className="img-fluid" src={img2} alt="Mercantec" />
                 <CardBody>
                   <CardTitle tag="h4" className="mt-0">Card title</CardTitle>
                   <CardText>
@@ -86,7 +86,7 @@ const UiCards = () => {
 
             <Col md={6} xl={3}>
               <Card>
-                <CardImg top className="img-fluid" src={img3} alt="Skote" />
+                <CardImg top className="img-fluid" src={img3} alt="Mercantec" />
                 <CardBody>
                   <CardText>
                     Some quick example text to build on the card title and make
@@ -103,7 +103,7 @@ const UiCards = () => {
                     Support card subtitle
                   </CardSubtitle>
                 </CardBody>
-                <CardImg className="img-fluid" src={img4} alt="Skote" />
+                <CardImg className="img-fluid" src={img4} alt="Mercantec" />
                 <CardBody>
                   <CardText>
                     Some quick example text to build on the card title and make
@@ -266,7 +266,7 @@ const UiCards = () => {
           <Row>
             <Col lg={4}>
               <Card>
-                <CardImg top className="img-fluid" src={img5} alt="Skote" />
+                <CardImg top className="img-fluid" src={img5} alt="Mercantec" />
                 <CardBody>
                   <CardTitle tag="h4" className="mt-0">Card title</CardTitle>
                   <CardText>
@@ -298,13 +298,13 @@ const UiCards = () => {
                     </small>
                   </CardText>
                 </CardBody>
-                <CardImg bottom className="img-fluid" src={img7} alt="Skote" />
+                <CardImg bottom className="img-fluid" src={img7} alt="Mercantec" />
               </Card>
             </Col>
 
             <Col lg={4}>
               <Card>
-                <CardImg className="img-fluid" src={img6} alt="Skote" />
+                <CardImg className="img-fluid" src={img6} alt="Mercantec" />
                 <CardImgOverlay>
                   <CardTitle tag="h4" className="text-white mt-0">Card title</CardTitle>
                   <CardText className="text-light">
@@ -327,7 +327,7 @@ const UiCards = () => {
               <Card>
                 <Row className="no-gutters align-items-center">
                   <Col md={4}>
-                    <CardImg className="img-fluid" src={img2} alt="Skote" />
+                    <CardImg className="img-fluid" src={img2} alt="Mercantec" />
                   </Col>
                   <Col md={8}>
                     <CardBody>
@@ -364,7 +364,7 @@ const UiCards = () => {
                     </CardBody>
                   </Col>
                   <Col md={4}>
-                    <CardImg className="img-fluid" src={img3} alt="Skote" />
+                    <CardImg className="img-fluid" src={img3} alt="Mercantec" />
                   </Col>
                 </Row>
               </Card>
@@ -522,7 +522,7 @@ const UiCards = () => {
               <CardDeck className="card-deck-wrapper">
                 <div className="card-group">
                   <Card className="mb-4">
-                    <CardImg top className="img-fluid" src={img4} alt="Skote" />
+                    <CardImg top className="img-fluid" src={img4} alt="Mercantec" />
                     <CardBody>
                       <CardTitle tag="h4" className="mt-0">Card title</CardTitle>
                       <CardText>
@@ -538,7 +538,7 @@ const UiCards = () => {
                     </CardBody>
                   </Card>
                   <Card className="mb-4">
-                    <CardImg top className="img-fluid" src={img5} alt="Skote" />
+                    <CardImg top className="img-fluid" src={img5} alt="Mercantec" />
                     <CardBody>
                       <CardTitle tag="h4" className="mt-0">Card title</CardTitle>
                       <CardText>
@@ -553,7 +553,7 @@ const UiCards = () => {
                     </CardBody>
                   </Card>
                   <Card className="mb-4">
-                    <CardImg top className="img-fluid" src={img6} alt="Skote" />
+                    <CardImg top className="img-fluid" src={img6} alt="Mercantec" />
                     <CardBody>
                       <CardTitle tag="h4" className="mt-0">Card title</CardTitle>
                       <CardText>

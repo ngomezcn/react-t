@@ -11,18 +11,19 @@ import {
     ToastHeader,
     ToastBody,
     CardTitle,
+    UncontrolledAlert
 } from "reactstrap";
 
 //Import Breadcrumb
 import Breadcrumbs from "../../Components/Common/Breadcrumb";
 
 //import images
-import logo from "../../assets/images/logo.svg";
+import logo from "../../assets/images/logo.png";
 
 const UiToast = () => {
 
     //meta title
-    document.title = "Toast | Skote - React Admin & Dashboard Template";
+    document.title = "Toast | Mercantec - Quiz Project";
 
     const [toast, setToast] = useState(false);
     const [toast2, setToast2] = useState(true);
@@ -92,7 +93,7 @@ const UiToast = () => {
                                         <Toast show={toast2} role="alert" onClose={() => setToast2(false)}  >
                                             <ToastHeader tag={React.Fragment} tagClassName="" toggle={() => setToast2(!toast2)}>
                                                 <img src={logo} alt="" className="me-2" height="18" />
-                                                <strong className="me-auto">Skote</strong>
+                                                <strong className="me-auto">Mercantec</strong>
                                                 <small className="text-muted">11 mins ago</small>
                                             </ToastHeader>
                                             <ToastBody>Hello, world! This is a toast message.</ToastBody>
@@ -119,7 +120,7 @@ const UiToast = () => {
                                         >
                                             <ToastHeader tag={React.Fragment} tagClassName="" toggle={() => setToast3(!toast3)}>
                                                 <img src={logo} alt="" className="me-2" height="18" />
-                                                <strong className="me-auto">Skote</strong>
+                                                <strong className="me-auto">Mercantec</strong>
                                                 <small className="text-muted">11 mins ago</small>
                                             </ToastHeader>
                                             <ToastBody>
@@ -150,7 +151,7 @@ const UiToast = () => {
                                                 >
                                                     <ToastHeader tag={React.Fragment} tagClassName="" toggle={() => setToast4(!toast4)}>
                                                         <img src={logo} alt="" className="me-2" height="18" />
-                                                        <strong className="me-auto">Skote</strong>
+                                                        <strong className="me-auto">Mercantec</strong>
                                                         <small className="text-muted">just now</small>
                                                     </ToastHeader>
                                                     <ToastBody>
@@ -164,7 +165,7 @@ const UiToast = () => {
                                                 >
                                                     <ToastHeader tag={React.Fragment} tagClassName="" toggle={() => setToast5(!toast5)}>
                                                         <img src={logo} alt="" className="me-2" height="18" />
-                                                        <strong className="me-auto">Skote</strong>
+                                                        <strong className="me-auto">Mercantec</strong>
                                                         <small className="text-muted">2 sec ago</small>
                                                     </ToastHeader>
                                                     <ToastBody>

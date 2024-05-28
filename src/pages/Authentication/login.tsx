@@ -11,11 +11,11 @@ import { useSelector, useDispatch } from "react-redux";
 
 // import images
 import profile from "../../assets/images/profile-img.png";
-import logo from "../../assets/images/logo.svg";
+import logo from "../../assets/images/logo.png";
 import lightlogo from "../../assets/images/logo-light.svg";
 
 //import thunk
-import { loginuser, resetLoginMsgFlag, socialLogin } from "slices/auth/login/thunk";
+import { loginuser, resetLoginMsgFlag } from "slices/auth/login/thunk";
 
 import withRouter from "Components/Common/withRouter";
 import { createSelector } from 'reselect';
@@ -25,7 +25,7 @@ const Login = (props: any) => {
   const dispatch: any = useDispatch();
 
   //meta title
-  document.title = "Login | Skote - React Admin & Dashboard Template";
+  document.title = "Login | Mercantec - Quiz Project";
 
   const selectProperties = createSelector(
     (state: any) => state.Login,
@@ -54,14 +54,6 @@ const Login = (props: any) => {
     }
   });
 
-  const signIn = (type: any) => {
-    dispatch(socialLogin(type, props.router.navigate))
-  }
-
-  const socialResponse = (type: any) => {
-    signIn(type)
-  }
-
   useEffect(() => {
     if (error) {
       setTimeout(() => {
@@ -82,7 +74,7 @@ const Login = (props: any) => {
                     <Col className="col-7">
                       <div className="text-primary p-4">
                         <h5 className="text-primary">Welcome Back !</h5>
-                        <p>Sign in to continue to Skote.</p>
+                        <p>Sign in to continue to Mercantec.</p>
                       </div>
                     </Col>
                     <Col className="col-5 align-self-end">
@@ -211,7 +203,7 @@ const Login = (props: any) => {
                   </Link>{" "}
                 </p>
                 <p>
-                  © {new Date().getFullYear()} Skote. Crafted with{" "}
+                  © {new Date().getFullYear()} Mercantec. Crafted with{" "}
                   <i className="mdi mdi-heart text-danger" /> by Themesbrand
                 </p>
               </div>

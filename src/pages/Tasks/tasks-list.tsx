@@ -49,7 +49,7 @@ interface RecentTask {
 
 const TasksList = () => {
   //meta title
-  document.title = "Task List | Skote - React Admin & Dashboard Template"
+  document.title = "Task List | Mercantec - Quiz Project"
 
   const dispatch = useDispatch<any>()
 

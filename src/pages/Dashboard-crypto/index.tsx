@@ -17,7 +17,7 @@ import WalletBalance from './Wallet-balance';
 const DashboardCrypto: React.FC = () => {
 
   //meta title
-  document.title = "Crypto Dashboard | Skote - React Admin & Dashboard Template";
+  document.title = "Crypto Dashboard | Mercantec - Quiz Project";
 
   return (
     <React.Fragment>

@@ -31,7 +31,7 @@ import InvoiceDetail from "../pages/Invoices/invoices-detail";
 // //Projects
 import ProjectsGrid from "../pages/Projects/projects-grid";
 import ProjectsList from "../pages/Projects/projects-list";
-import ProjectsCreate from "../pages/Projects/projects-create";
+import CreateQuestion from "../pages/Projects/projects-create";
 import ProjectsOverview from "../pages/Projects/ProjectOverview/projects-overview"
 
 // Pages Calendar
@@ -222,10 +222,12 @@ const authProtectedRoutes = [
   //Projects
   { path: "/projects-grid", component: <ProjectsGrid /> },
   { path: "/projects-list", component: <ProjectsList /> },
-  { path: "/projects-create", component: <ProjectsCreate /> },
   { path: "/projects-overview", component: <ProjectsOverview /> },
   { path: "/projects-overview/:id?", component: <ProjectsOverview /> },
 
+
+  // Questions
+  { path: "/create-question", component: <CreateQuestion /> },
 
   //Email
   { path: "/email-inbox", component: <EmailInbox /> },

@@ -36,7 +36,7 @@ const PagesComingsoon = () => {
   }
 
   //meta title
-  document.title = "Coming Soon | Skote - React Admin & Dashboard Template";
+  document.title = "Coming Soon | Mercantec - Quiz Project";
 
   return (
     <React.Fragment>
@@ -67,7 +67,7 @@ const PagesComingsoon = () => {
                     </div>
                   </Col>
                 </Row>
-                <h4 className="mt-5">Let&apos;s get started with Skote</h4>
+                <h4 className="mt-5">Let&apos;s get started with Mercantec</h4>
                 <p className="text-muted">
                   It will be as simple as Occidental in fact it will be
                   Occidental.

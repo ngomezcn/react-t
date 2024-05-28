@@ -21,7 +21,7 @@ import Breadcrumbs from "../../Components/Common/Breadcrumb";
 const UiDrawer = () => {
 
     //meta title
-    document.title = "Offcanvas | Skote - React Admin & Dashboard Template";
+    document.title = "Offcanvas | Mercantec - Quiz Project";
 
     const [open, setOpen] = useState(false);
     const [isTop, setIsTop] = useState(false);

@@ -9,7 +9,7 @@ import logolight from "../../assets/images/logo-light.svg"
 const ConfirmMail = () => {
 
   //meta title
-  document.title="Confirm Mail | Skote - React Admin & Dashboard Template";
+  document.title="Confirm Mail | Mercantec - Quiz Project";
 
   return (
     <React.Fragment>
@@ -67,7 +67,7 @@ const ConfirmMail = () => {
               </Card>
               <div className="mt-5 text-center">
                 <p>
-                  © {new Date().getFullYear()} Skote. Crafted with{" "}
+                  © {new Date().getFullYear()} Mercantec. Crafted with{" "}
                   <i className="mdi mdi-heart text-danger"></i> by Themesbrand
                 </p>
               </div>

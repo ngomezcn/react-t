@@ -16,13 +16,13 @@ import { userForgetPassword } from "../../slices/thunk";
 
 // import images
 import profile from "../../assets/images/profile-img.png";
-import logo from "../../assets/images/logo.svg";
+import logo from "../../assets/images/logo.png";
 import { createSelector } from 'reselect';
 
 const ForgetPasswordPage = (props) => {
 
     //meta title
-    document.title = "Forget Password | Skote - React Admin & Dashboard Template";
+    document.title = "Forget Password | Mercantec - Quiz Project";
 
     const dispatch = useDispatch<any>();
 
@@ -68,7 +68,7 @@ const ForgetPasswordPage = (props) => {
                                         <Col xs={7}>
                                             <div className="text-primary p-4">
                                                 <h5 className="text-primary">Welcome Back !</h5>
-                                                <p>Sign in to continue to Skote.</p>
+                                                <p>Sign in to continue to Mercantec.</p>
                                             </div>
                                         </Col>
                                         <Col className="col-5 align-self-end">
@@ -151,7 +151,7 @@ const ForgetPasswordPage = (props) => {
                                     </Link>{" "}
                                 </p>
                                 <p>
-                                    © {new Date().getFullYear()} Skote. Crafted with{" "}
+                                    © {new Date().getFullYear()} Mercantec. Crafted with{" "}
                                     <i className="mdi mdi-heart text-danger" /> by Themesbrand
                                 </p>
                             </div>

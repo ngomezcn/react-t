@@ -10,7 +10,7 @@ import LanguageDropdown from "../../Components/Common/LanguageDropdown";
 import ProfileMenu from "../../Components/CommonForBoth/TopBarDropDown/ProfileMenu";
 
 import megamenuImg from "../../assets/images/megamenu-img.png";
-import logo from "../../assets/images/logo.svg";
+import logo from "../../assets/images/logo.png";
 import logoLight from "../../assets/images/logo-light.svg";
 import logoLightSvg from "../../assets/images/logo-light.svg";
 import logoDark from "../../assets/images/logo-dark.svg";
@@ -94,7 +94,7 @@ const Header = (props: any) => {
               <i className="fa fa-fw fa-bars" />
             </button>
 
-            <form className="app-search d-none d-lg-block">
+            {/*  <form className="app-search d-none d-lg-block">
               <div className="position-relative">
                 <input
                   type="text"
@@ -105,7 +105,7 @@ const Header = (props: any) => {
               </div>
             </form>
 
-            <Dropdown
+           <Dropdown
               className="dropdown-mega d-none d-lg-block ms-2"
               isOpen={menu}
               toggle={() => setMenu(!menu)}
@@ -250,7 +250,7 @@ const Header = (props: any) => {
                   </Col>
                 </Row>
               </DropdownMenu>
-            </Dropdown>
+            </Dropdown>*/}
           </div>
 
           <div className="d-flex">

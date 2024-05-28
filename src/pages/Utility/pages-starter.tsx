@@ -7,7 +7,7 @@ import Breadcrumbs from "../../Components/Common/Breadcrumb";
 const PagesStarter = () => {
 
     //meta title
-    document.title="Stater Page | Skote - React Admin & Dashboard Template";
+    document.title="Stater Page | Mercantec - Quiz Project";
 
   return (
     <React.Fragment>

@@ -19,7 +19,7 @@ import Breadcrumbs from "../../Components/Common/Breadcrumb";
 const UiModal = () => {
 
   //meta title
-  document.title = "Models | Skote - React Admin & Dashboard Template";
+  document.title = "Models | Mercantec - Quiz Project";
 
   const [modal_standard, setmodal_standard] = useState(false);
   const [modal_large, setmodal_large] = useState(false);

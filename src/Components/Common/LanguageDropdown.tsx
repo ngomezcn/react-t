@@ -14,7 +14,7 @@ import i18n from "../../i18n";
 import languages from "../../common/languages";
 
 //img
-import usflag from "assets/images/flags/us.jpg";
+import usflag from "assets/images/flags/gb.jpg";
 
 const LanguageDropdown = () => {
   // Declare a new state variable, which we'll call "menu"

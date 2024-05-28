@@ -10,7 +10,7 @@ import logoLight from "../../assets/images/logo-light.svg"
 const PagesMaintenance = () => {
 
   //meta title
-  document.title = "Maintenance | Skote - React Admin & Dashboard Template";
+  document.title = "Maintenance | Mercantec - Quiz Project";
 
   return (
     <React.Fragment>

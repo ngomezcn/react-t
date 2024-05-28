@@ -39,7 +39,7 @@ interface mailChatDataType {
 const EmailInbox = () => {
 
   //meta title
-  document.title = "Inbox | Skote - React Admin & Dashboard Template";
+  document.title = "Inbox | Mercantec - Quiz Project";
 
   const dispatch = useDispatch<any>();
 

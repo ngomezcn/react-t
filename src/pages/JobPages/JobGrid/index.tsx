@@ -11,7 +11,7 @@ import { getJobGrid as onGetJobGrid } from 'slices/thunk';
 import Spinners from 'Components/Common/Spinner';
 
 const JobGrid = () => {
-    document.title = "Jobs Grid | Skote - React Admin & Dashboard Template";
+    document.title = "Jobs Grid | Mercantec - Quiz Project";
 
     const dispatch = useDispatch<any>();
 

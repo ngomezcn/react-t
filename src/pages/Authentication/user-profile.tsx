@@ -33,7 +33,7 @@ import { createSelector } from 'reselect';
 const UserProfile = () => {
 
   //meta title
-  document.title = "Profile | Skote - React Admin & Dashboard Template";
+  document.title = "Profile | Mercantec - Quiz Project";
 
   const dispatch = useDispatch<any>();
 
@@ -96,7 +96,7 @@ const UserProfile = () => {
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumb */}
-          <Breadcrumb title="Skote" breadcrumbItem="Profile" />
+          <Breadcrumb title="Mercantec" breadcrumbItem="Profile" />
 
           <Row>
             <Col lg="12">

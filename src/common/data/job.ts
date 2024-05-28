@@ -87,7 +87,7 @@ const jobs = [
         id: 5,
         jobId: "#SK2544",
         title: "Product Sales Specialist",
-        companyName: "Skote Technology pvt.Ltd",
+        companyName: "Mercantec Technology pvt.Ltd",
         location: "Louisiana",
         experience: "5+ Years",
         position: 1,
@@ -317,7 +317,7 @@ const jobApply = [
         id: 4,
         no: 4,
         jobTitle: "HTML Developer",
-        companyName: "Skote Technology pvt.Ltd",
+        companyName: "Mercantec Technology pvt.Ltd",
         type: "Full Time",
         applyDate: "02 June 2021",
         status: "Active",
@@ -358,84 +358,84 @@ const jobsGridData = [
         img: adobe,
         title: "Magento Developer",
         location: "California",
-        companyName: 'Skote Technology Pvt.Ltd'
+        companyName: 'Mercantec Technology Pvt.Ltd'
     },
     {
         id: 2,
         img: adobephotoshop,
         title: "Product Designer",
         location: "California",
-        companyName: 'Skote Technology Pvt.Ltd'
+        companyName: 'Mercantec Technology Pvt.Ltd'
     },
     {
         id: 3,
         img: airbnb,
         title: "Marketing Director",
         location: "California",
-        companyName: 'Skote Technology Pvt.Ltd'
+        companyName: 'Mercantec Technology Pvt.Ltd'
     },
     {
         id: 4,
         img: amazon,
         title: "Project Manager"
         , location: "California",
-        companyName: 'Skote Technology Pvt.Ltd'
+        companyName: 'Mercantec Technology Pvt.Ltd'
     },
     {
         id: 5,
         img: flutter,
         title: "HTML Developer"
         , location: "California",
-        companyName: 'Skote Technology Pvt.Ltd'
+        companyName: 'Mercantec Technology Pvt.Ltd'
     },
     {
         id: 6,
         img: mailchimp,
         title: "Business Associate",
         location: "California",
-        companyName: 'Skote Technology Pvt.Ltd'
+        companyName: 'Mercantec Technology Pvt.Ltd'
     },
     {
         id: 7,
         img: line,
         title: "Product Sales Spec,ialist",
         location: "California",
-        companyName: 'Skote Technology Pvt.Ltd'
+        companyName: 'Mercantec Technology Pvt.Ltd'
     },
     {
         id: 8,
         img: spotify,
         title: "Magento Developer",
         location: "California",
-        companyName: 'Skote Technology Pvt.Ltd'
+        companyName: 'Mercantec Technology Pvt.Ltd'
     },
     {
         id: 9,
         img: wordpress,
         title: "Magento Developer",
         location: "California",
-        companyName: 'Skote Technology Pvt.Ltd'
+        companyName: 'Mercantec Technology Pvt.Ltd'
     },
     {
         id: 10,
         img: upwork,
         title: "Magento Developer",
         location: "California",
-        companyName: 'Skote Technology Pvt.Ltd'
+        companyName: 'Mercantec Technology Pvt.Ltd'
     },
     {
         id: 11,
         img: sass,
         title: "Magento Developer",
         location: "California",
-        companyName: 'Skote Technology Pvt.Ltd'
+        companyName: 'Mercantec Technology Pvt.Ltd'
     },
     {
         id: 12,
         img: reddit,
         title: "Magento Developer",
         location: "California",
-        companyName: 'Skote Technology Pvt.Ltd'
+        companyName: 'Mercantec Technology Pvt.Ltd'
     },
 ]
 export { jobs, jobListCandidate, jobApply, jobsGridData };

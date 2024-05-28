@@ -64,9 +64,9 @@ function App() {
       const isValid = await jwtValidation({ "token": cookies.get("authToken") });
       console.log(isValid)
       setAuthenticated(isValid);
-      //if (!isValid) {
-      //  navigate("/login");
-      // }
+      if (!isValid) {
+       navigate("/login");
+      }
 
       setLoading(false);
     };

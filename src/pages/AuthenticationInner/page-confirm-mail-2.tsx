@@ -10,7 +10,7 @@ import { Link } from "react-router-dom"
 const ConfirmMail2 = () => {
 
   //meta title
-  document.title="Confirm Mail 2 | Skote - React Admin & Dashboard Template";
+  document.title="Confirm Mail 2 | Mercantec - Quiz Project";
 
   return (
     <React.Fragment>
@@ -64,7 +64,7 @@ const ConfirmMail2 = () => {
 
                     <div className="mt-4 mt-md-5 text-center">
                       <p className="mb-0">
-                        © {new Date().getFullYear()} Skote. Crafted with{" "}
+                        © {new Date().getFullYear()} Mercantec. Crafted with{" "}
                         <i className="mdi mdi-heart text-danger"></i> by
                         Themesbrand
                       </p>

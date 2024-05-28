@@ -29,7 +29,7 @@ import { ToastContainer } from "react-toastify";
 const ContactsList = () => {
 
   //meta title
-  document.title = "User List | Skote - React Admin & Dashboard Template";
+  document.title = "User List | Mercantec - Quiz Project";
 
   const selectProperties = createSelector(
     (state: any) => state.contacts,

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import SidebarContent from "./SidebarContent";
 
 //import images
-import logo from "../../assets/images/logo.svg";
+import logo from "../../assets/images/logo.png";
 import logoLightPng from "../../assets/images/logo-light.svg";
 import logoLightSvg from "../../assets/images/logo-light.svg";
 import logoDark from "../../assets/images/logo-dark.svg";
